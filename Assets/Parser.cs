@@ -24,8 +24,19 @@ public class Parser : MonoBehaviour
     // Update is called once per frame
     void Update(){
 
+        //ensure the field is always the focus
+        inputField.Select();
+        inputField.ActivateInputField();
+
+
         if (Input.GetKeyDown(KeyCode.Return)) {
-            Parse(inputField.text);
+
+            //the parser will only process a command if the nav terminal is nto currently printing; pevents command spam
+            if (navTextPrinter.TerminalIdle()) {
+                Parse(inputField.text);
+            }
+
+            //input is deleted, whether parsed or not
             inputField.text = "";
         }
 
