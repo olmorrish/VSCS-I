@@ -9,6 +9,9 @@ public class TerminalPrinter : MonoBehaviour
     List<string> printBuffer;           //
     public string currentlyPrinting;    //the string being printed currently
 
+    public GameObject[] fireworkObjs;
+    public ParticleSystem[] fireworks;
+
     private float nextPrintTime;
     private float printDelay;
     public float printDelayDefault = 3f; 
@@ -16,6 +19,8 @@ public class TerminalPrinter : MonoBehaviour
     private bool currentHasBeenScanned;
 
     public bool runNavDemoOnLaunch;
+
+    public bool fwGo;
 
     private bool dontEndNextLine;       //a flag; tripped when set by a special command. Stops the  automatic newline character for the next line.
 
@@ -28,6 +33,13 @@ public class TerminalPrinter : MonoBehaviour
         nextPrintTime = Time.time;
         dontEndNextLine = false;
 
+        fwGo = false;
+
+        for (int i=0; i<fireworkObjs.Length; i++) {
+            fireworks[i] = fireworkObjs[i].GetComponent<ParticleSystem>();
+            fireworks[i].Stop();
+        }
+
         //TODO REMOVE
         if (runNavDemoOnLaunch) {
             RunDemo();
@@ -39,6 +51,10 @@ public class TerminalPrinter : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
+
+        if (fwGo) {
+            fireworks[0].Play();
+        }
 
         //if nothing is printing but the buffer has a string, begin printing it
         if (printBuffer.Count > 0 && currentlyPrinting == null) {
@@ -130,33 +146,98 @@ public class TerminalPrinter : MonoBehaviour
     }
 
     private void RunDemo() {
-        FeedLine("::SPEED 0");
-        FeedLine("[        LOADING        ]");
-        FeedLine("::SPEED 12");
-        FeedLine("|||||||||||||||||||||||||");
-        FeedLine("::SPEED 0");
+        FeedLine("::SPEED 1");
+        FeedLine("[        LOADING SYSTEM        ]");
+        FeedLine("::SPEED 8");
+        FeedLine("||||||||||||||||||||||||||||||||");
+        FeedLine("::SPEED 1");
         FeedLine("Loading complete.");
 
-        FeedLine("> Welcome to the VSCS-I terminal.");
-        FeedLine("> Enter a command below to begin, or type HELP for a list of commands.");
+        FeedLine("\n> Welcome to the HAPPY BIRTHDAY terminal (Author: OLIVER MORRISH).");
+        FeedLine("> To run the program, enter a name, age, and the number of times to say happy birthday: \n");
+
     }
 
-    public void ShowNavIntro() {
-        FeedLine("::SPEED 0");
-        FeedLine("\n> This left segment is the NAVIGATION TERMINAL. It will display information about files, as well as error messages when appropriate.");
-        FeedLine("> Enter a command below to begin, or type HELP for a list of commands.");
-    }
+    public void PrintHBDMessage(string name, string age, int numTimes) {
 
-    public void ShowFileIntro() {
         FeedLine("::SPEED 0");
-        FeedLine("  The VSCS monitor utilizes a state - of - the - art DYNAMIC DUAL DISPLAY.");
-        FeedLine("  The right segment of your display is the FILE VIEWER. It is of a higher resolution than the left, allowing you to read files on your machine. " +
-            "When a text file is opened, it will be displayed here.");
-        FeedLine("\n  The FILE VIEWER will allow you to enter passwords while reading their hints on the other side of the screen. Hopefully it should make puzzles more manageable.");
-        FeedLine("  Currently, you can push data to either one of these displays with a \"FeedLine(str)\" call. Special commands can be used to slow down the speed of the text by setting the delay length.");
-        FeedLine("  For instance, setting the speed to 60 will print a character every 60 frames: ");
-        FeedLine("::SPEED 60");
-        FeedLine("2398469132875629384756298347562893475629834756298374562983756289347569283756");
+
+        for (int i = 0; i<(numTimes/2); i++) {
+            int j = 2 * i + 1;
+            int k = 2 * i + 2;
+
+            string postJ;
+            if (j % 10 == 1 && j != 11)
+                postJ = "st";
+            else if (j % 10 == 2 && j != 12)
+                postJ = "nd";
+            else if (j % 10 == 3 && j != 13)
+                postJ = "rd";
+            else
+                postJ = "th";
+
+            string postK;
+            if (k % 10 == 1 && k != 11)
+                postK = "st";
+            else if (k % 10 == 2 && k != 12)
+                postK = "nd";
+            else if (k % 10 == 3 && k != 13)
+                postK = "rd";
+            else
+                postK = "th";
+
+            FeedLine("(#" + j + ") Happy " + j + postJ +" birthday, " + name + "! (#" + k +  ") Happy " + k + postK + " birthday, " + name + "!");
+
+            if (j == 24 || k == 24) {
+                FeedLine("You got married, then Diane was born!");
+            }
+            if (j == 26 || k == 26) {
+                FeedLine("Paul was born!");
+            }
+            if (j == 29 || k == 29) {
+                FeedLine("Tony was born! (He did the math and guessed your age for these funfacts).");
+            }
+            if (j == 47 || k == 47) {
+                FeedLine("You became a grandad!");
+            }
+            if (j == 76 || k == 76) {
+                FeedLine("You became a GREAT-grandad!");
+            }
+            if (j == 80 || k == 80) {
+                FeedLine("(If any of the events or dates here were wrong, please take it up with Tony - I had to watch him do math and it was painful.)");
+            }
+
+
+
+
+
+
+
+            if (i > (numTimes / 2))
+                fwGo = true;
+        }
+
+
+        FeedLine("                  *               *");
+        FeedLine("  ~       *                *         ~    *");
+        FeedLine("              *       ~        *              *   ~");
+        FeedLine("               )       )         )       (             *");
+        FeedLine("           *  (_) # ) (_) ) # ( (_) ( # (_)       *");
+        FeedLine("              _#.-#(_)-#-(_)#(_)-#-(_)#-.#_");
+        FeedLine("           :   #    #  #  #   #  #  #    #   :");
+        FeedLine("        *  | `-.__                     __.-' | *");
+        FeedLine("           |      `````\"\"\"\"\"\"\"\"\"\"\"`````      |         *");
+        FeedLine("     *     |         | ||\\ |~)|~)\\ /         |");
+        FeedLine("           |         |~||~\\|~ |~  |          |       ~");
+        FeedLine("   ~   *   |                                 | *");
+        FeedLine("           |      |~)||~)~|~| ||~\\|\\ \\ /     |         *");
+        FeedLine("   *    _.-|      |~)||~\\ | |~|| /|~\\ |      |-._");
+        FeedLine("      .'   '.      ~            ~           .'   `.  *");
+        FeedLine("      :      `-.__                     __.-'      :");
+        FeedLine("       `.         `````\"\"\"\"\"\"\"\"\"\"\"`````         .'");
+        FeedLine("         `-.._                             _..-'");
+        FeedLine("              ````\"\"\"\"-----------\"\"\"\"`````");
+
     }
 
 
