@@ -21,16 +21,15 @@ public class FileSystem : MonoBehaviour
         fileTextPrinter = fileTextObject.GetComponent<TerminalPrinter>();
 
         //build the basic file tree
-        FileNode headDirectory = new FileNode("Home", NodeType.Directory);
+        string[] headFilePath = { "Home" };
+        FileNode headDirectory = new FileNode("Home", headFilePath, NodeType.Directory);
         coreFileTree = new FileTree(headDirectory);
         currentNode = coreFileTree.head;
 
-        //string[] filePath = { "Home", "Oliver" };
-        //FileNode userOliver = new FileNode(filePath, NodeType.User);
-        //coreFileTree.AddFileNode(userOliver);
+        string[] filePath = { "Home", "Oliver" };
+        FileNode userOliver = new FileNode("Oliver", filePath, NodeType.User);
+        coreFileTree.AddFileNode(userOliver);
 
-        FileNode headDirectory2 = new FileNode("Home2", NodeType.Directory);
-        coreFileTree.head.children.Add(headDirectory2);
 
     }
 
@@ -39,11 +38,12 @@ public class FileSystem : MonoBehaviour
 
     }
 
+
     public bool OpenRequest(string fileToOpen) {
 
         //search the child nodes of the player's location to see if their request makes sense
         foreach (FileNode child in currentNode.children){
-            if (fileToOpen.Equals(child.nodeName)) {
+            if (fileToOpen.ToUpper().Equals(child.nodeName.ToUpper())) {
                 currentNode = child;
                 navTextPrinter.FeedLine(currentNode.printNavOnEnter);
                 fileTextPrinter.FeedLine(currentNode.printFileOnEnter);
@@ -53,7 +53,16 @@ public class FileSystem : MonoBehaviour
         return false;
     }
 
-    public string[] getChildList() {
+    public bool BackRequest() {
+        if (!currentNode.Equals(coreFileTree.head)) {
+            currentNode = currentNode.parent;
+            return true;
+        }
+        else
+            return false;
+    }
+
+    public string[] GetChildList() {
         int numChildren = currentNode.children.Count;
 
         string[] ret = new string[numChildren];
@@ -63,4 +72,6 @@ public class FileSystem : MonoBehaviour
 
         return ret;
     }
+
+
 }

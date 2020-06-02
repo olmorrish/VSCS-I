@@ -25,22 +25,29 @@ public class FileNode {
     private string v1;
     private string v2;
 
-    /* Head Node Constructor
-     * 
-     */
-    public FileNode(string name, NodeType t) {
-        type = t;
+    ///* Head Node Constructor
+    // * 
+    // */
+    //public FileNode(string name, NodeType t) {
+    //    type = t;
+    //    nodeName = name;
+    //    children = new List<FileNode>();
+    //    printNavOnEnter = null;
+    //    printFileOnEnter = null;
+    //    locked = false;
+    //    password = null;
+    //}
+
+    public FileNode(string name, string[] fqName, NodeType nType) {
+        type = nType;
         nodeName = name;
+        fullyQualifiedName = fqName;
+
         children = new List<FileNode>();
-        printNavOnEnter = null;
-        printFileOnEnter = null;
+        printNavOnEnter = "DEF";
+        printFileOnEnter = "DEF";
         locked = false;
         password = null;
-    }
-
-    public FileNode(string[] fqName, NodeType node) {
-
-        //TODO
     }
 
 
@@ -62,18 +69,95 @@ public class FileTree {
         head = null;
     }
 
+    /*
+     * Intended for use by external classes.
+     */
     public bool AddFileNode(FileNode toAdd) {
+
+        int depth = toAdd.fullyQualifiedName.Length;
+
+        //check that the node's name matches its fully qualified name
+        // if it doesn't, the tree may break, so reject the addition.
+        if (!toAdd.fullyQualifiedName[depth - 1].Equals(toAdd.nodeName)) {
+            Debug.Log("Addition of node " + toAdd.nodeName + " failed. node name did not match fully-qualified name.");
+            return false;
+        }
+        else {
+            string[] targetAddress = toAdd.fullyQualifiedName;
+            return AddFileNodeAt(toAdd, targetAddress, head); ;
+        }
+
+    }
+
+    /*
+     * Internal class recursive call. 
+     * Recursively navigates the tree to find where the node must go.
+     */
+    private bool AddFileNodeAt(FileNode toAdd, string[] remainingAddress, FileNode current) {
 
         if (head == null) {     //if there is no head node, add the node there
             head = toAdd;
+            return true;
         }
+
+        //otherwise, look at the children of the current node
+        //if any match the first part fo the address, go deeper. 
+            // Otherwise, if the address is done, insert the node 
         else {
-            FileNode current = head;
-            string[] nodeDestination = toAdd.fullyQualifiedName;
+            //if the current node has children, check their names
+            if (current.children.Count != 0) {
+                foreach (FileNode child in current.children) {
+                    if (child.nodeName.Equals(remainingAddress[0])) {
+                        //we've found the next layer to go down, and must recursively call
+                        //first update the address to cut what we just found:
+                        string[] newAdr = new string[remainingAddress.Length - 1];
+                        for (int i = 0; i < remainingAddress.Length - 1; i++) {
+                            newAdr[i] = remainingAddress[i + 1];    //basically copying all but the first element to a new array
+                        }
+
+                        //perform the recursive call with the new shorter address and at the child node:
+                        Debug.Log("Recursing into node \"" + child.nodeName + "\".");
+                        return AddFileNodeAt(toAdd, newAdr, child);
+                    }
+                }
+
+                //if this point is reached, then the search did not find a match
+                //check if the address is done
+                if (remainingAddress.Length == 2) {  //if done, add the node as a child of current location
+                    toAdd.parent = current;
+                    current.children.Add(toAdd);
+                    return true;
+                }
+                else {
+                    Debug.Log("Addition of node " + toAdd.nodeName + " failed. Address was too long (no path found).");
+                    return false;                   //otherwise return that the addition failed
+                }
+            }
+
+            //no more children below the current node 
+            // check if the address is done
+            else {
+                if(remainingAddress.Length == 2) {  //if done, add the node as a child of current location
+                    toAdd.parent = current;
+                    current.children.Add(toAdd);
+                    return true;
+                }
+                else {
+                    string errorLog = "Addition of node " + toAdd.nodeName + " failed. Address was too long (no children at last node). The remaining address was: \"";
+                    for(int i=0; i<remainingAddress.Length; i++) {
+                        errorLog += remainingAddress[i] + " | ";
+                    }
+                    Debug.Log(errorLog + "\".");
+
+                    return false;                   //otherwise return that the addition failed
+                }
+            }
+
+
+
+
         }
-                
-        //TODO
-        return false;
+        
     }
 
     public bool DeleteFileNode() {

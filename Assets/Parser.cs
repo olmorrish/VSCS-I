@@ -62,7 +62,7 @@ public class Parser : MonoBehaviour
                 navTextPrinter.FeedLine("> Hello world!");
                 break;
             case "LIST":
-                string[] list = fileSystem.getChildList();
+                string[] list = fileSystem.GetChildList();
                 foreach (string item in list) {
                     navTextPrinter.FeedLine("> " + item);
                 }
@@ -85,6 +85,11 @@ public class Parser : MonoBehaviour
                 }
                 else
                     fileSystem.OpenRequest(inputs[1]);
+                break;
+            case "BACK":
+                bool atHead = fileSystem.BackRequest();
+                if (atHead)
+                    navTextPrinter.FeedLine("> Cannot go back further.");
                 break;
             default:
                 navTextPrinter.FeedLine("> Did not recognize command \"" + command + "\".");
