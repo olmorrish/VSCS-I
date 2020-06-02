@@ -30,7 +30,6 @@ public class FileSystem : MonoBehaviour
         FileNode userOliver = new FileNode("Oliver", filePath, NodeType.User);
         coreFileTree.AddFileNode(userOliver);
 
-
     }
 
     // Update is called once per frame
@@ -38,6 +37,15 @@ public class FileSystem : MonoBehaviour
 
     }
 
+    public string GetCurrentFQN() {
+        string[] fqn = currentNode.fullyQualifiedName;
+
+        string ret = fqn[0];
+        for (int i = 1; i<fqn.Length; i++) {
+            ret += "/" + fqn[i];
+        }
+        return ret;
+    }
 
     public bool OpenRequest(string fileToOpen) {
 
@@ -58,7 +66,7 @@ public class FileSystem : MonoBehaviour
             currentNode = currentNode.parent;
             return true;
         }
-        else
+        else 
             return false;
     }
 
