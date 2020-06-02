@@ -594,6 +594,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 759998107}
+  - component: {fileID: 759998106}
   m_Layer: 0
   m_Name: FileTreeObject
   m_TagString: Untagged
@@ -601,6 +602,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &759998106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759998105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32024f349ec0a4488b8cf77b7ec0d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navTextObject: {fileID: 1029974050}
+  fileTextObject: {fileID: 303361509}
 --- !u!4 &759998107
 Transform:
   m_ObjectHideFlags: 0
@@ -1163,3 +1178,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navTextObject: {fileID: 1029974050}
   fileTextObject: {fileID: 303361509}
+  fileSystemObject: {fileID: 759998105}

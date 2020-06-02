@@ -65,14 +65,6 @@ public class TerminalPrinter : MonoBehaviour
                     case "NONEW":
                         dontEndNextLine = true;
                         break;
-                    case "LOADB":                       //the loading bars act as macros, queueing up multiple commands
-                        FeedLine("::SPEED 0");
-                        FeedLine("[      LOADING      ]");
-                        FeedLine("::SPEED " + arg.ToString());
-                        FeedLine("|||||||||||||||||||||");
-                        FeedLine("::SPEED 0");
-                        FeedLine("Loading complete.");
-                        break;
                     default:
                         Debug.Log("Script detected unknown :: special command: \"" + command + "\"");
                         break;
@@ -93,15 +85,13 @@ public class TerminalPrinter : MonoBehaviour
             }
             //on the last character, print a newline char as well
             else {
-                if (dontEndNextLine)
+                if (dontEndNextLine) {
                     boxText.text = boxText.text + currentlyPrinting[0];
-                else 
+                    dontEndNextLine = false;
+                }
+                else
                     boxText.text = boxText.text + currentlyPrinting[0] + "\n";
                 currentlyPrinting = null;
-
-                //re-enable the the don't-end-line flag
-                if (dontEndNextLine)
-                    dontEndNextLine = false;
             }
 
             nextPrintTime = Time.time + printDelay;

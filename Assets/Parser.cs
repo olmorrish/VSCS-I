@@ -10,6 +10,9 @@ public class Parser : MonoBehaviour
     private TerminalPrinter navTextPrinter;
     private TerminalPrinter fileTextPrinter;
 
+    public GameObject fileSystemObject;
+    private FileSystem fileSystem;
+
     private InputField inputField;
 
     // Start is called before the first frame update
@@ -18,6 +21,7 @@ public class Parser : MonoBehaviour
         navTextPrinter = navTextObject.GetComponent<TerminalPrinter>();
         fileTextPrinter = fileTextObject.GetComponent<TerminalPrinter>();
         inputField = gameObject.GetComponent<InputField>();
+        fileSystem = fileSystemObject.GetComponent<FileSystem>();
 
     }
 
@@ -27,7 +31,6 @@ public class Parser : MonoBehaviour
         //ensure the field is always the focus
         inputField.Select();
         inputField.ActivateInputField();
-
 
         if (Input.GetKeyDown(KeyCode.Return)) {
 
@@ -57,6 +60,31 @@ public class Parser : MonoBehaviour
                 break;
             case "HELLO":
                 navTextPrinter.FeedLine("> Hello world!");
+                break;
+            case "LIST":
+                string[] list = fileSystem.getChildList();
+                foreach (string item in list) {
+                    navTextPrinter.FeedLine("> " + item);
+                }
+                if(list.Length == 0) {
+                    navTextPrinter.FeedLine("> No files could be found.");
+                }
+                break;
+            case "GOTO":
+                if (inputs.Length != 2) {
+                    navTextPrinter.FeedLine("> GOTO requires a single argument to function.");
+                    navTextPrinter.FeedLine("> Format: GOTO X, where X is your destination.");
+                }
+                else
+                    fileSystem.OpenRequest(inputs[1]);
+                break;
+            case "OPEN":
+                if (inputs.Length != 2) {
+                    navTextPrinter.FeedLine("> OPEN requires a single argument to function.");
+                    navTextPrinter.FeedLine("> Format: OPEN X, where X is the file to open.");
+                }
+                else
+                    fileSystem.OpenRequest(inputs[1]);
                 break;
             default:
                 navTextPrinter.FeedLine("> Did not recognize command \"" + command + "\".");
