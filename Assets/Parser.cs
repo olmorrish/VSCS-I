@@ -60,20 +60,26 @@ public class Parser : MonoBehaviour
                 break;
             case "LIST":
                 string[] list = fileSystem.GetChildList();
-                foreach (string item in list) {
-                    navTextPrinter.FeedLine("> " + item);
-                }
                 if(list.Length == 0) {
                     navTextPrinter.FeedLine("> No files could be found.");
+                }
+                else {
+                    navTextPrinter.FeedLine("> -- Contents -- ");
+                    foreach (string item in list) {
+                        navTextPrinter.FeedLine("> " + item);
+                    }
                 }
                 break;
             case "LS":
                 string[] LSlist = fileSystem.GetChildList();
-                foreach (string item in LSlist) {
-                    navTextPrinter.FeedLine("> " + item);
-                }
                 if (LSlist.Length == 0) {
                     navTextPrinter.FeedLine("> No files could be found.");
+                }
+                else {
+                    navTextPrinter.FeedLine("> -- Contents -- ");
+                    foreach (string item in LSlist) {
+                        navTextPrinter.FeedLine("> " + item);
+                    }
                 }
                 break;
             case "GOTO":
@@ -90,16 +96,10 @@ public class Parser : MonoBehaviour
                     navTextPrinter.FeedLine("> Format: OPEN X, where X is the file to open.");
                 }
                 else
-                    fileSystem.OpenRequest(inputs[1]);
+                    fileSystem.OpenRequest(inputs[1]); 
                 break;
             case "BACK":
-                bool backFailed = !(fileSystem.BackRequest());
-                if (backFailed)
-                    navTextPrinter.FeedLine("> Cannot go back further.");
-                else {
-                    string backTo = fileSystem.GetCurrentFQN();
-                    navTextPrinter.FeedLine("> Now at: " + backTo.ToUpper() + ".");
-                }
+                fileSystem.BackRequest();
                 break;
             case "LOST":
                 string location = fileSystem.GetCurrentFQN();
@@ -154,11 +154,11 @@ public class Parser : MonoBehaviour
             case "ZOOP":
                 navTextPrinter.FeedLine("> *fingerguns*");
                 break;
-            case "LOSS":
+            case "L055":
                 navTextPrinter.FeedLine("\n>         | t    ");
                 navTextPrinter.FeedLine(">     I   | h  i ");
                 navTextPrinter.FeedLine(">     s   |    s "); ;
-                navTextPrinter.FeedLine(">  ------+------");
+                navTextPrinter.FeedLine(">  -------+-------");
                 navTextPrinter.FeedLine(">    L  s | .    ");
                 navTextPrinter.FeedLine(">    o  s | t    ");
                 navTextPrinter.FeedLine(">         |  xt? ");

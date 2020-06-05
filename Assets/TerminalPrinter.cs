@@ -146,7 +146,7 @@ public class TerminalPrinter : MonoBehaviour
         FeedLine("  Currently, you can push data to either one of these displays with a \"FeedLine(str)\" call. Special commands can be used to slow down the speed of the text by setting the delay length.");
         FeedLine("  For instance, setting the speed to 60 will print a character every 60 frames: ");
         FeedLine("::SPEED 60");
-        FeedLine("2398469132875629384756298347562893475629834756298374562983756289347569283756");
+        FeedLine("2398");
     }
 
 

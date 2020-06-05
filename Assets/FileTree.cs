@@ -11,7 +11,7 @@ public enum NodeType {
 public class FileNode {
 
     //all node properties
-    NodeType type;                                //ex: text
+    public NodeType nodeType;                            //ex: text
     public string nodeName;                       //ex: "passwords"
     public string[] fullyQualifiedName;           //ex: "Oliver, myFiles, passwords"
     public string printNavOnEnter;
@@ -39,13 +39,13 @@ public class FileNode {
     //}
 
     public FileNode(string name, string[] fqName, NodeType nType) {
-        type = nType;
+        nodeType = nType;
         nodeName = name;
         fullyQualifiedName = fqName;
 
         children = new List<FileNode>();
-        printNavOnEnter = "DEF";
-        printFileOnEnter = "DEF";
+        printNavOnEnter = null;
+        printFileOnEnter = null;
         locked = false;
         password = null;
     }
@@ -108,6 +108,9 @@ public class FileTree {
             if (current.children.Count != 0) {
                 foreach (FileNode child in current.children) {
                     if (child.nodeName.Equals(remainingAddress[0])) {
+
+                        Debug.Log("Match found for node "+ toAdd +" at address " + remainingAddress[0]+ ".");
+
                         //we've found the next layer to go down, and must recursively call
                         //first update the address to cut what we just found:
                         string[] newAdr = new string[remainingAddress.Length - 1];
@@ -123,13 +126,18 @@ public class FileTree {
 
                 //if this point is reached, then the search did not find a match
                 //check if the address is done
-                if (remainingAddress.Length == 2) {  //if done, add the node as a child of current location
+                if (remainingAddress.Length <= 2) {  //if done, add the node as a child of current location
+
                     toAdd.parent = current;
                     current.children.Add(toAdd);
                     return true;
                 }
                 else {
-                    Debug.Log("Addition of node " + toAdd.nodeName + " failed. Address was too long (no path found).");
+                    string errorLog = "Addition of node " + toAdd.nodeName + " failed. Address was too long (no path found).The remaining address was: \"";
+                    for (int i = 0; i < remainingAddress.Length; i++) {
+                        errorLog += remainingAddress[i] + " | ";
+                    }
+                    Debug.Log(errorLog + "\".");
                     return false;                   //otherwise return that the addition failed
                 }
             }
@@ -137,7 +145,7 @@ public class FileTree {
             //no more children below the current node 
             // check if the address is done
             else {
-                if(remainingAddress.Length == 2) {  //if done, add the node as a child of current location
+                if(remainingAddress.Length <= 2) {  //if done, add the node as a child of current location
                     toAdd.parent = current;
                     current.children.Add(toAdd);
                     return true;

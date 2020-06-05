@@ -26,9 +26,22 @@ public class FileSystem : MonoBehaviour
         coreFileTree = new FileTree(headDirectory);
         currentNode = coreFileTree.head;
 
-        string[] filePath = { "Home", "Oliver" };
-        FileNode userOliver = new FileNode("Oliver", filePath, NodeType.User);
-        coreFileTree.AddFileNode(userOliver);
+        string[] filePathA = { "Home", "Alice" };
+        FileNode userA = new FileNode("Alice", filePathA, NodeType.User);
+        coreFileTree.AddFileNode(userA);
+
+        string[] filePathB = { "Home", "Bob" };
+        FileNode userB = new FileNode("Bob", filePathB, NodeType.User);
+        coreFileTree.AddFileNode(userB);
+
+        string[] exampleFilePath = { "Alice", "ExampleDoc"};
+        FileNode exampleDoc = new FileNode("ExampleDoc", exampleFilePath, NodeType.Text);
+        exampleDoc.printFileOnEnter = "    A computer is a machine that can be instructed to carry out sequences of arithmetic or logical operations " +
+            "automatically via computer programming. Modern computers have the ability to follow generalized sets of operations, called programs. " +
+            "\n    These programs enable computers to perform an extremely wide range of tasks. A \"complete\" computer including the hardware, the " +
+            "operating system (main software), and peripheral equipment required and used for \"full\" operation can be referred to as a computer " +
+            "system. This term may as well be used for a group of computers that are connected and work together, in particular a computer network or computer cluster. ";
+        coreFileTree.AddFileNode(exampleDoc);
 
     }
 
@@ -49,25 +62,52 @@ public class FileSystem : MonoBehaviour
 
     public bool OpenRequest(string fileToOpen) {
 
+        bool found = false;
+
         //search the child nodes of the player's location to see if their request makes sense
         foreach (FileNode child in currentNode.children){
+
             if (fileToOpen.ToUpper().Equals(child.nodeName.ToUpper())) {
-                currentNode = child;
-                navTextPrinter.FeedLine(currentNode.printNavOnEnter);
-                fileTextPrinter.FeedLine(currentNode.printFileOnEnter);
-            }
+                //we've found the file, now decide what to do
+                if(child.nodeType == NodeType.Text) {
+                    //text nodes are special; we don't navigateinto them, we just read them
+                    navTextPrinter.FeedLine("> File opened.");
+                    fileTextPrinter.FeedLine(child.printFileOnEnter);
+                    found = true;
+                }
+                else {
+                    currentNode = child;
+                    string location = GetCurrentFQN();
+                    navTextPrinter.FeedLine("> Now at: " + location.ToUpper());
+                    navTextPrinter.FeedLine(currentNode.printNavOnEnter);
+                    fileTextPrinter.FeedLine(currentNode.printFileOnEnter);
+                    
+                }
+
+                //set the flag since we found the right node
+                found = true;
+            }   
         }
 
-        return false;
+        //if node was not found, print an error.
+        if (!found) {
+            navTextPrinter.FeedLine("> Could not find requested file.");
+            return false;
+        }
+        else
+            return true;
     }
 
     public bool BackRequest() {
         if (!currentNode.Equals(coreFileTree.head)) {
+            navTextPrinter.FeedLine("> Now at: " + GetCurrentFQN());
             currentNode = currentNode.parent;
             return true;
         }
-        else 
+        else {
+            navTextPrinter.FeedLine("> Cannot go back further.");
             return false;
+        }
     }
 
     public string[] GetChildList() {
@@ -75,7 +115,23 @@ public class FileSystem : MonoBehaviour
 
         string[] ret = new string[numChildren];
         for (int i=0; i< numChildren; i++) {
-            ret[i] = currentNode.children[i].nodeName;
+
+            //grab each file name and modify it's prinout based on the node type
+            string printName = currentNode.children[i].nodeName;
+            NodeType nType = currentNode.children[i].nodeType;
+            switch (nType) {
+                case NodeType.User:
+                    printName = "[USER] " + printName;
+                    break;
+                case NodeType.Directory:
+                    printName = "[FLDR] " + printName;
+                    break;
+                case NodeType.Text:
+                    printName = "[TEXT] " + printName;
+                    break;
+            }
+
+            ret[i] = printName;
         }
 
         return ret;
