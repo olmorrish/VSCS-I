@@ -58,6 +58,11 @@ public class Parser : MonoBehaviour
                 navTextPrinter.ShowNavIntro();
                 fileTextPrinter.ShowFileIntro();
                 break;
+
+            /////////////////////////
+            // NAVIGATION COMMANDS //
+            /////////////////////////
+
             case "LIST":
                 string[] list = fileSystem.GetChildList();
                 if(list.Length == 0) {
@@ -109,6 +114,7 @@ public class Parser : MonoBehaviour
             /////////////////////////
             // EASTER EGG COMMANDS //
             /////////////////////////
+            
             case "META":
                 navTextPrinter.FeedLine("> M E T A");
                 navTextPrinter.FeedLine("> E");

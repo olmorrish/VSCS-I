@@ -99,6 +99,18 @@ public class TerminalPrinter : MonoBehaviour
     }
 
 
+    /* Wipe
+     * Halts any text currenly printing and clears the textbox.
+     * Used when a new text document is opened to prevent clashes. 
+     */
+    public void Wipe() {
+        currentlyPrinting = null;
+        boxText.text = "";
+    }
+
+    /* Terminal Idle
+     * Returns true only if the terminal is not currently printing anything and has no messages queued. 
+     */
     public bool TerminalIdle() {
         return (printBuffer.Count == 0 && currentlyPrinting == null);
     }

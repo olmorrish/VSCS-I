@@ -11,9 +11,13 @@ public enum NodeType {
 public class FileNode {
 
     //all node properties
-    public NodeType nodeType;                            //ex: text
+    public NodeType nodeType;                     //ex: text
     public string nodeName;                       //ex: "passwords"
     public string[] fullyQualifiedName;           //ex: "Oliver, myFiles, passwords"
+
+    public bool playerReadPermission;             // if true, player may open to view text/directory. Users cannot be locked behind R-permission and must use a password.
+    public string owner;
+
     public string printNavOnEnter;
     public string printFileOnEnter;
     public bool locked;
@@ -25,18 +29,11 @@ public class FileNode {
     private string v1;
     private string v2;
 
-    ///* Head Node Constructor
-    // * 
-    // */
-    //public FileNode(string name, NodeType t) {
-    //    type = t;
-    //    nodeName = name;
-    //    children = new List<FileNode>();
-    //    printNavOnEnter = null;
-    //    printFileOnEnter = null;
-    //    locked = false;
-    //    password = null;
-    //}
+    //Empty Constructor
+    // Used when building the tree via the FileTreeConstructor
+    public FileNode() {
+
+    }
 
     public FileNode(string name, string[] fqName, NodeType nType) {
         nodeType = nType;

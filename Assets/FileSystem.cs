@@ -36,6 +36,7 @@ public class FileSystem : MonoBehaviour
 
         string[] exampleFilePath = { "Alice", "ExampleDoc"};
         FileNode exampleDoc = new FileNode("ExampleDoc", exampleFilePath, NodeType.Text);
+        exampleDoc.playerReadPermission = true;
         exampleDoc.printFileOnEnter = "    A computer is a machine that can be instructed to carry out sequences of arithmetic or logical operations " +
             "automatically via computer programming. Modern computers have the ability to follow generalized sets of operations, called programs. " +
             "\n    These programs enable computers to perform an extremely wide range of tasks. A \"complete\" computer including the hardware, the " +
@@ -45,21 +46,22 @@ public class FileSystem : MonoBehaviour
 
     }
 
+
+
     // Update is called once per frame
     void Update(){
 
     }
 
-    public string GetCurrentFQN() {
-        string[] fqn = currentNode.fullyQualifiedName;
 
-        string ret = fqn[0];
-        for (int i = 1; i<fqn.Length; i++) {
-            ret += "/" + fqn[i];
-        }
-        return ret;
-    }
 
+
+
+
+    /* Open Request
+     * The player has requested access to a file with GOTO or OPEN
+     * Determine if the file exists, then if they have permission to open it.
+     */
     public bool OpenRequest(string fileToOpen) {
 
         bool found = false;
@@ -68,20 +70,32 @@ public class FileSystem : MonoBehaviour
         foreach (FileNode child in currentNode.children){
 
             if (fileToOpen.ToUpper().Equals(child.nodeName.ToUpper())) {
-                //we've found the file, now decide what to do
-                if(child.nodeType == NodeType.Text) {
-                    //text nodes are special; we don't navigateinto them, we just read them
-                    navTextPrinter.FeedLine("> File opened.");
-                    fileTextPrinter.FeedLine(child.printFileOnEnter);
-                    found = true;
+
+                //we've found the file, now CHECK PERMISSIONS
+                //first, check that the file is not a (non-user) file that is restricted by read-permissions
+                if (PlayerCanOpen(child)) {   
+
+                    if (child.nodeType == NodeType.Text) {
+                        //text nodes are special; we don't navigateinto them, we just read them
+                        fileTextPrinter.Wipe(); //clear space for the new file
+                        navTextPrinter.FeedLine("> File opened.");
+                        fileTextPrinter.FeedLine(child.printFileOnEnter);
+                        found = true;
+                    }
+                    else {
+                        currentNode = child;
+                        string location = GetCurrentFQN();
+                        navTextPrinter.FeedLine("> Now at: " + location.ToUpper());
+                        navTextPrinter.FeedLine(currentNode.printNavOnEnter);
+                        fileTextPrinter.FeedLine(currentNode.printFileOnEnter);
+
+                    }
                 }
+
+                //if permission was denied:
                 else {
-                    currentNode = child;
-                    string location = GetCurrentFQN();
-                    navTextPrinter.FeedLine("> Now at: " + location.ToUpper());
-                    navTextPrinter.FeedLine(currentNode.printNavOnEnter);
-                    fileTextPrinter.FeedLine(currentNode.printFileOnEnter);
-                    
+                    navTextPrinter.FeedLine("> You do not have permission to access this file (ERR: file permission [_]).");
+                    navTextPrinter.FeedLine("> Please contact a MEGA user to alter this file's permission state to [R].");
                 }
 
                 //set the flag since we found the right node
@@ -98,10 +112,16 @@ public class FileSystem : MonoBehaviour
             return true;
     }
 
+
+
+    /* Back Request
+     * Processes a player's request to go to the parent node
+     * Finishes my printing the player's current location in the filetree, or an error if at the head node
+     */
     public bool BackRequest() {
         if (!currentNode.Equals(coreFileTree.head)) {
-            navTextPrinter.FeedLine("> Now at: " + GetCurrentFQN());
             currentNode = currentNode.parent;
+            navTextPrinter.FeedLine("> Now at: " + GetCurrentFQN().ToUpper());
             return true;
         }
         else {
@@ -110,6 +130,12 @@ public class FileSystem : MonoBehaviour
         }
     }
 
+
+
+    /* Get Child List
+     * Formats a string array of details and permissions of the current node's children
+     * Used to build a string set to print out when player enters LIST or similar commands
+     */
     public string[] GetChildList() {
         int numChildren = currentNode.children.Count;
 
@@ -131,10 +157,60 @@ public class FileSystem : MonoBehaviour
                     break;
             }
 
+            //then, pre-append the file permissions for the node
+            if(nType != NodeType.User) {
+                if (currentNode.children[i].playerReadPermission)
+                    printName = "[R] " + printName;
+                else
+                    printName = "[_] " + printName;
+            }
+
             ret[i] = printName;
         }
 
         return ret;
+    }
+
+
+    /* Get Current Fully-Qualified Name
+     * Retrieves the FQN of the current node as a formatted string, including slashes
+     */
+    public string GetCurrentFQN() {
+        string[] fqn = currentNode.fullyQualifiedName;
+
+        string ret = fqn[0];
+        for (int i = 1; i<fqn.Length; i++) {
+            ret += "/" + fqn[i];
+        }
+        return ret;
+    }
+    
+    
+    
+    /* Player Can Open
+     * Given a node, checks if the player is allowed to open it. 
+     * Utilized internally by method OpenRequest() 
+     */
+    private bool PlayerCanOpen(FileNode node) {
+
+        bool passwordIssue = false; //TODO
+        bool readPermissionIssue = false;
+
+        switch (node.nodeType) {
+            case NodeType.User:
+                break;
+            case NodeType.Text:
+                if (!node.playerReadPermission)
+                    readPermissionIssue = true;
+                break;
+            case NodeType.Directory:
+                if (!node.playerReadPermission)
+                    readPermissionIssue = true;
+                break;
+        }
+
+        return !(passwordIssue || readPermissionIssue); //if either flag was tripped, player is not allowed access; return false
+        
     }
 
 
