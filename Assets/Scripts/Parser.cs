@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Parser : MonoBehaviour
 {
+
     public GameObject navTextObject;
     public GameObject fileTextObject;
     private TerminalPrinter navTextPrinter;
@@ -15,6 +17,10 @@ public class Parser : MonoBehaviour
 
     private InputField inputField;
 
+    //cinematics
+    public GameObject spookyMusicObject;
+    private AudioSource spookyMusic;
+
     // Start is called before the first frame update
     void Start(){
 
@@ -22,6 +28,9 @@ public class Parser : MonoBehaviour
         fileTextPrinter = fileTextObject.GetComponent<TerminalPrinter>();
         inputField = gameObject.GetComponent<InputField>();
         fileSystem = fileSystemObject.GetComponent<FileSystem>();
+
+        //cinematics
+        spookyMusic = spookyMusicObject.GetComponent<AudioSource>();
 
     }
 
@@ -46,9 +55,24 @@ public class Parser : MonoBehaviour
     }
 
     public void Parse(string rawInput) {
+        
+        
+        //SPECIAL CINEMATIC TRIGGERS
+        if (rawInput.ToUpper().Equals("OPEN PLEASEHELP", StringComparison.CurrentCultureIgnoreCase)
+            || rawInput.ToUpper().Equals("GOTO PLEASEHELP", StringComparison.CurrentCultureIgnoreCase) 
+            || rawInput.ToUpper().Equals("CD PLEASEHELP", StringComparison.CurrentCultureIgnoreCase)){
 
+                spookyMusic.Play();
+        }
+        
+                
+                
         string[] inputs = rawInput.Split(' ');
         string command = inputs[0].ToUpper();
+
+
+
+
 
         switch (command) {
             case "HELP":

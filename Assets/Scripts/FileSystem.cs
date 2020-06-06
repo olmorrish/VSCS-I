@@ -293,15 +293,17 @@ public class FileSystem : MonoBehaviour
             n.printNavOnEnter = chunk[6].Substring(4);
         else {
             n.printNavOnEnter = null;
-            Debug.Log("Null nav text");
+            //Debug.Log("Null nav text");
         }
 
         //file text
-        if (chunk[7].Length > 4)
-            n.printFileOnEnter = chunk[7].Substring(4);
+        if (chunk[7].Length > 4) {
+            string rawFileText = chunk[7].Substring(4);
+            n.printFileOnEnter = rawFileText.Replace('|', '\n');
+        }
         else {
             n.printNavOnEnter = null;
-            Debug.Log("Null file text");
+            //Debug.Log("Null file text");
         }
 
         //return the newly-built node

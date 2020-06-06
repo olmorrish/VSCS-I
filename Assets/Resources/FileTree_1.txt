@@ -1,35 +1,89 @@
 NodeType: User
-FQName: Home/Alice
+FQName: Home/Guest
 ReadBit: 1
-Owner: Alice
+Owner: Guest
 LockBit: 0
 Password: NA
-NT: this is a test
+NT: Session as VSCS-I Guest has started.
 FT:
 
 NodeType: Directory
-FQName: Alice/MyDocuments
+FQName: Guest/VSCSManual
 ReadBit: 1
-Owner: Alice
+Owner: Guest
 LockBit: 0
 Password: NA
-NT: > Alice's shit lol
+NT:
 FT:
 
 NodeType: Text
-FQName: Alice/MyDocuments/TestFile
+FQName: Guest/VSCSManual/Page1
 ReadBit: 1
-Owner: Alice
+Owner: Guest
 LockBit: 0
 Password: NA
 NT:
-FT: DAY ONE -- Things are getting bad out there. 
+FT: The VSCS-I (Very Secure Computer System - Mark I) is designed to make your life easier than ever.|	At <VAR MISSING:)@;b3,7-> we're dedicated to pushing the bar for technology, and that's why your display has not just one screen, but TWO. The right-hand monitor is the FILE VIEWER. It is designed to display text (like this) at a higher resolution for easy-reading. With the VSCS's large hard-drive, this makes the machine perfect for authors and casual diary-keepers.
 
 NodeType: Text
-FQName: Alice/MyDocuments/TestFile2
+FQName: Guest/VSCSManual/Page2
+ReadBit: 1
+Owner: Guest
+LockBit: 0
+Password: NA
+NT:
+FT: As you have likely discovered, navigation feedback is given by the left screen, the NAVIGATION TERMINAL. Here are the most basic commands you may require to continue:||"HELP" will bring up a menu of the most important commands, without you having to reopen the manual.|"GOTO X" will open any file or directory named "X".|"OPEN X" will do the same thing as GOTO.|"BACK" will return you to the parent directory.|"LIST" will display all files in your current directory.|"LOST" will remind you of your current location in the file system.||If you are ever confused, remember, tell us you're LOST and ask for HELP! Alternatively, consult the manual here, or refer to documentation outside of the computer system.
+
+NodeType: Text
+FQName: Guest/VSCSManual/Page3
+ReadBit: 1
+Owner: Guest
+LockBit: 0
+Password: NA
+NT:
+FT: New VSCS-I home computer systems come loaded with a default user profile, which cannot be deleted. This fictional user's name is "ALICE".|As a new VSCS user, "Alice's" files are designed to give you an idea of what you can acheive with VSCS-I, and we hope it inspires your imagination as you continue to use our product.||To log in as "Alice," you can use the default password: "ADMIN".
+-------------------------------------------------
+NodeType: User
+FQName: Home/Alice
+ReadBit: 1
+Owner: Alice
+LockBit: 1
+Password: ADMIN
+NT: Session as "Alice" has started.
+FT:
+
+NodeType: Directory
+FQName: Alice/MyDiary
 ReadBit: 1
 Owner: Alice
 LockBit: 0
 Password: NA
 NT:
-FT: DAY TWO -- Things are even worse. I can't feel my fingers.
+FT:
+
+NodeType: Text
+FQName: Alice/MyDiary/Jun23
+ReadBit: 1
+Owner: Alice
+LockBit: 0
+Password: NA
+NT:
+FT: Alice's Diary - June 23rd, 1966||
+
+NodeType: Text
+FQName: Alice/MyDiary/Jun24
+ReadBit: 1
+Owner: Alice
+LockBit: 0
+Password: NA
+NT:
+FT: Alice's Diary - June 24th, 1966||
+
+NodeType: Text
+FQName: Alice/MyDiary/PLEASEHELP
+ReadBit: 1
+Owner: Alice
+LockBit: 0
+Password: NA
+NT:
+FT: 	It might be too late.|	If you've purchased this computer, it's probably a relic now, but I need your help. I'm writing this in the year 1977. This message won't appear in the files of the default profile for another 25 years (give or take a few if the system clock is off). This was the only way I could hide this information without them finding out I was leaking it. Chances are, if you're reading this, they've probably already killed me.|	There's too much data to display it all here. Know this: the VSCS-I is DEEPLY FLAWED. If you're smart, you can piece everything together. My documents will be scattered everywhere. Aside from this file, I don't know where in the system they'll turn up. It'll be worse if this thing's been around for a while - there might be a few user profiles.|	If you're not one of them, I'm begging you, keep digging. It'll all become clear. Please.|| - M
