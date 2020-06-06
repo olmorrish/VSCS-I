@@ -1,0 +1,35 @@
+NodeType: User
+FQName: Home/Alice
+ReadBit: 1
+Owner: Alice
+LockBit: 0
+Password: NA
+NT: this is a test
+FT:
+
+NodeType: Directory
+FQName: Alice/MyDocuments
+ReadBit: 1
+Owner: Alice
+LockBit: 0
+Password: NA
+NT: > Alice's shit lol
+FT:
+
+NodeType: Text
+FQName: Alice/MyDocuments/TestFile
+ReadBit: 1
+Owner: Alice
+LockBit: 0
+Password: NA
+NT:
+FT: DAY ONE -- Things are getting bad out there. 
+
+NodeType: Text
+FQName: Alice/MyDocuments/TestFile2
+ReadBit: 1
+Owner: Alice
+LockBit: 0
+Password: NA
+NT:
+FT: DAY TWO -- Things are even worse. I can't feel my fingers.
