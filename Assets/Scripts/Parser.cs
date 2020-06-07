@@ -207,15 +207,12 @@ public class Parser : MonoBehaviour
         navTextPrinter.FeedLine("Command  | Usage");
         navTextPrinter.FeedLine("---------|----------------------------");
         navTextPrinter.FeedLine("HELP     | Displays this menu.");
-        navTextPrinter.FeedLine("DEMO     | Run a VSCS demo.");
         navTextPrinter.FeedLine("LIST     | Lists all files in the");
         navTextPrinter.FeedLine("         |  current directory.");
         navTextPrinter.FeedLine("OPEN X   | Opens directory/file \"X\".");
+        navTextPrinter.FeedLine("OPEN X Y | Opens directory/file \"X\"");
+        navTextPrinter.FeedLine("         |   using password \"Y\".");
         navTextPrinter.FeedLine("BACK     | Navigates one directory up.");
-        navTextPrinter.FeedLine("---------|----------------------------");
-        navTextPrinter.FeedLine("- The commands below don't work (yet!)");
-        navTextPrinter.FeedLine("---------|----------------------------");
-        navTextPrinter.FeedLine("ULOK X P | Attempts to use password ");
-        navTextPrinter.FeedLine("         |  \"P\" to unlock file \"X\".");
+        navTextPrinter.FeedLine("LOST     | Displays your file location.");
     }
 }

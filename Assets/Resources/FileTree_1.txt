@@ -68,7 +68,7 @@ Owner: Alice
 LockBit: 0
 Password: NA
 NT:
-FT: Alice's Diary - June 23rd, 1966||
+FT: Alice's Diary - June 23rd, 1966||	Today was a good day. The end.
 
 NodeType: Text
 FQName: Alice/MyDiary/Jun24
@@ -77,7 +77,7 @@ Owner: Alice
 LockBit: 0
 Password: NA
 NT:
-FT: Alice's Diary - June 24th, 1966||
+FT: Alice's Diary - June 24th, 1966||	I will fill in the details later, since right now I do not have time to jokingly roleplay as a fictional ten-year-old for this also fictional computer system lol.
 
 NodeType: Text
 FQName: Alice/MyDiary/PLEASEHELP
@@ -87,3 +87,12 @@ LockBit: 0
 Password: NA
 NT:
 FT: 	It might be too late.|	If you've purchased this computer, it's probably a relic now, but I need your help. I'm writing this in the year 1977. This message won't appear in the files of the default profile for another 25 years (give or take a few if the system clock is off). This was the only way I could hide this information without them finding out I was leaking it. Chances are, if you're reading this, they've probably already killed me.|	There's too much data to display it all here. Know this: the VSCS-I is DEEPLY FLAWED. If you're smart, you can piece everything together. My documents will be scattered everywhere. Aside from this file, I don't know where in the system they'll turn up. It'll be worse if this thing's been around for a while - there might be a few user profiles.|	If you're not one of them, I'm begging you, keep digging. It'll all become clear. Please.|| - M
+
+NodeType: Text
+FQName: Alice/MyDiary/Jun25
+ReadBit: 1
+Owner: Alice
+LockBit: 0
+Password: NA
+NT:
+FT: Alice's Diary - June 25th, 1966||	Pretty spooky, huh?
