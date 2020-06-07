@@ -98,7 +98,7 @@ public class FileTree {
                 foreach (FileNode child in current.children) {
                     if (child.nodeName.Equals(remainingAddress[0])) {
 
-                        Debug.Log("Match found for node "+ toAdd +" at address " + remainingAddress[0]+ ".");
+                        //Debug.Log("Match found for node "+ toAdd +" at address " + remainingAddress[0]+ ".");
 
                         //we've found the next layer to go down, and must recursively call
                         //first update the address to cut what we just found:
@@ -108,7 +108,7 @@ public class FileTree {
                         }
 
                         //perform the recursive call with the new shorter address and at the child node:
-                        Debug.Log("Recursing into node \"" + child.nodeName + "\".");
+                        //Debug.Log("Recursing into node \"" + child.nodeName + "\".");
                         return AddFileNodeAt(toAdd, newAdr, child);
                     }
                 }

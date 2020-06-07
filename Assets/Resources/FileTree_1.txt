@@ -23,7 +23,7 @@ Owner: Guest
 LockBit: 0
 Password: NA
 NT:
-FT: The VSCS-I (Very Secure Computer System - Mark I) is designed to make your life easier than ever.|	At <VAR MISSING:)@;b3,7-> we're dedicated to pushing the bar for technology, and that's why your display has not just one screen, but TWO. The right-hand monitor is the FILE VIEWER. It is designed to display text (like this) at a higher resolution for easy-reading. With the VSCS's large hard-drive, this makes the machine perfect for authors and casual diary-keepers.
+FT: 	The VSCS-I (Very Secure Computer System - Mark I) is designed to make your life easier than ever.|	At <VAR MISSING:)@;b3,7-> we're dedicated to pushing the bar for technology, and that's why your display has not just one screen, but TWO. The right-hand monitor is the FILE VIEWER. It is designed to display text (like this) at a higher resolution for easy-reading.|	With the VSCS's large hard-drive, this makes the machine perfect for authors and casual diary-keepers!
 
 NodeType: Text
 FQName: Guest/VSCSManual/Page2
@@ -32,7 +32,7 @@ Owner: Guest
 LockBit: 0
 Password: NA
 NT:
-FT: As you have likely discovered, navigation feedback is given by the left screen, the NAVIGATION TERMINAL. Here are the most basic commands you may require to continue:||"HELP" will bring up a menu of the most important commands, without you having to reopen the manual.|"GOTO X" will open any file or directory named "X".|"OPEN X" will do the same thing as GOTO.|"BACK" will return you to the parent directory.|"LIST" will display all files in your current directory.|"LOST" will remind you of your current location in the file system.||If you are ever confused, remember, tell us you're LOST and ask for HELP! Alternatively, consult the manual here, or refer to documentation outside of the computer system.
+FT: 	As you have likely discovered, navigation feedback is given by the left screen, the NAVIGATION TERMINAL. Here are the most basic commands you may require to continue:||"HELP" will bring up a menu of the most important commands, without you having to reopen the manual.|"GOTO X" will open any file or directory named "X".|"OPEN X" will do the same thing as GOTO.|"BACK" will return you to the parent directory.|"LIST" will display all files in your current directory.|"LOST" will remind you of your current location in the file system.||	If you are ever confused, remember, tell us you're LOST and ask for HELP! Alternatively, consult the manual here, or refer to documentation outside of the computer system.
 
 NodeType: Text
 FQName: Guest/VSCSManual/Page3
@@ -41,7 +41,16 @@ Owner: Guest
 LockBit: 0
 Password: NA
 NT:
-FT: New VSCS-I home computer systems come loaded with a default user profile, which cannot be deleted. This fictional user's name is "ALICE".|As a new VSCS user, "Alice's" files are designed to give you an idea of what you can acheive with VSCS-I, and we hope it inspires your imagination as you continue to use our product.||To log in as "Alice," you can use the default password: "ADMIN".
+FT: 	Some files on the system may be locked, indicated by the "#" symbol. These users and files require a case-sensitive password to unlock.|	Unlocked files will remain unlocked for the remainder of the session. ||	Some files on the system may also be restricted to certain users. A file that you have permission to view will be preceeded by the "R" symbol.|	If you do not have read permission for a file, you will also not be permitted to unlock it until you have logged in as that file's owner.||	Read-permissions can be bypassed with the MEGA command, but only if you have logged in as a MEGA user during this session.|	The MEGA command is the same as OPEN, but will ignore all read permission restrictions.||EXAMPLES: |	[R,_] means you have permission to read the file, and it is unlocked.|	[_,#] means the file is password locked, and you may not attempt to unlock it without logging in as the file owner. 
+
+NodeType: Text
+FQName: Guest/VSCSManual/Page4
+ReadBit: 1
+Owner: Guest
+LockBit: 0
+Password: NA
+NT:
+FT: 	New VSCS-I home computer systems come loaded with a default user profile, which cannot be deleted. This fictional user's name is "ALICE".|	As a new VSCS user, "Alice's" files are designed to give you an idea of what you can acheive with VSCS-I, and we hope it inspires your imagination as you continue to use our product.||	To log in as "Alice," you can use the default password: "ADMIN". Be sure to remember that passwords are CASE-SENSITIVE.
 -------------------------------------------------
 NodeType: User
 FQName: Home/Alice

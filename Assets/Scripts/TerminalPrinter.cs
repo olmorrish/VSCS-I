@@ -32,9 +32,6 @@ public class TerminalPrinter : MonoBehaviour
         if (runNavDemoOnLaunch) {
             RunDemo();
         }
-
-
-        Debug.Log(TerminalIdle());
     }
 
     // Update is called once per frame

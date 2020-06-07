@@ -112,20 +112,25 @@ public class Parser : MonoBehaviour
                 }
                 break;
             case "GOTO":
-                if (inputs.Length != 2) {
-                    navTextPrinter.FeedLine("> GOTO requires a single argument to function.");
-                    navTextPrinter.FeedLine("> Format: GOTO X, where X is your destination.");
-                }
-                else
-                    fileSystem.OpenRequest(inputs[1]);
+                //if (inputs.Length != 2) {
+                //    navTextPrinter.FeedLine("> GOTO requires a single argument to function.");
+                //    navTextPrinter.FeedLine("> Format: GOTO X, where X is your destination.");
+                //}
+                //else
+                //    fileSystem.OpenRequest(inputs[1]);
                 break;
             case "OPEN":
-                if (inputs.Length != 2) {
+                if (inputs.Length < 2) {
                     navTextPrinter.FeedLine("> OPEN requires a single argument to function.");
                     navTextPrinter.FeedLine("> Format: OPEN X, where X is the file to open.");
                 }
-                else
-                    fileSystem.OpenRequest(inputs[1]); 
+                else if(inputs.Length == 2) {    //player is attempting to open with no password
+                    fileSystem.OpenRequest(inputs[1], null); 
+                }
+                else {  //player must be attempting to open with password; second arg is passed in as pwd
+                    fileSystem.OpenRequest(inputs[1], inputs[2]);
+                }
+
                 break;
             case "BACK":
                 fileSystem.BackRequest();

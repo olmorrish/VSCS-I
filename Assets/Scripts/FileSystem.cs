@@ -41,7 +41,7 @@ public class FileSystem : MonoBehaviour
      * The player has requested access to a file with GOTO or OPEN
      * Determine if the file exists, then if they have permission to open it.
      */
-    public bool OpenRequest(string fileToOpen) {
+    public bool OpenRequest(string fileToOpen, string optionalPassword) {   //the password is only acknowledged if the requirement comes up
 
         bool found = false;
 
@@ -60,21 +60,44 @@ public class FileSystem : MonoBehaviour
                         //text nodes are special; we don't navigateinto them, we just read them
                         fileTextPrinter.Wipe(); //clear space for the new file
                         navTextPrinter.FeedLine("> File opened.");
-                        fileTextPrinter.FeedLine(child.printFileOnEnter);
+                        fileTextPrinter.FeedLine(child.printFileOnEnter); //we print the text for the CHILD TEXT NODE
                     }
                     else {
-                        currentNode = child;
+                        currentNode = child;                                             //go into the node
+                        navTextPrinter.FeedLine(currentNode.printNavOnEnter);            //then print details
+                        fileTextPrinter.FeedLine(currentNode.printFileOnEnter);     
                         string location = GetCurrentFQN();
                         navTextPrinter.FeedLine("> Now at: " + location.ToUpper());
-                        navTextPrinter.FeedLine(currentNode.printNavOnEnter);
-                        fileTextPrinter.FeedLine(currentNode.printFileOnEnter);
                     }
                 }
 
-                //if permission was denied:
+                //if default permission was denied, it was either due to read permission being disabled, or due to a password lock
                 else {
-                    navTextPrinter.FeedLine("> You do not have permission to access this file (ERR: file permission [_]).");
-                    navTextPrinter.FeedLine("> Please contact a MEGA user to alter this file's permission state to [R].");
+                    //1. PASSWORD CHECKS - These will only occur if the read permission is enabled. 
+                    //check if the player provided a password (field will be null if they haven't). If so, try it against the password for the node:
+                    if(optionalPassword != null && child.locked && child.playerReadPermission) {
+                        if (child.password.Equals(optionalPassword)) {
+                            child.locked = false;
+                            //the success message is different if a user profile was just unlocked.
+                            if (child.nodeType == NodeType.User)
+                                navTextPrinter.FeedLine("> User profile " + child.nodeName + " unlocked.");
+                            else
+                                navTextPrinter.FeedLine("> File unlocked successfully.");
+                        }
+                        else {
+                            navTextPrinter.FeedLine("> Incorrect password.");
+                        }
+                    }
+                    else if (child.locked){
+                        navTextPrinter.FeedLine("> This file is password locked. Please provide a password as a second argument to open.");
+                    }
+
+                    //2. READ PERMISSION CHECKS - The file is not password locked; permission must have been denied due to read permission error.
+                    else if (!child.playerReadPermission) {
+                        navTextPrinter.FeedLine("> You do not have permission to access this file (ERR: read permission [_]).");
+                        navTextPrinter.FeedLine("> Please contact a MEGA user to alter this file's read permission state to [R].");
+
+                    }
                 }
             }
         }
@@ -134,13 +157,25 @@ public class FileSystem : MonoBehaviour
                     break;
             }
 
+            printName = "] " + printName;
+
+            //pre-append the lock status of the file
+            if (currentNode.children[i].locked)
+                printName = "#" + printName;
+            else
+                printName = "_" + printName;
+
             //then, pre-append the file permissions for the node
-            if(nType != NodeType.User) {
+            if (nType != NodeType.User) {
                 if (currentNode.children[i].playerReadPermission)
-                    printName = "[R] " + printName;
+                    printName = "R," + printName;
                 else
-                    printName = "[_] " + printName;
+                    printName = "_," + printName;
             }
+
+            printName = "[" + printName;
+
+            
 
             ret[i] = printName;
         }
@@ -173,6 +208,12 @@ public class FileSystem : MonoBehaviour
         bool passwordIssue = false; //TODO
         bool readPermissionIssue = false;
 
+        //any type of file may be password locked
+        if (node.locked) {
+            passwordIssue = true;
+        }
+
+        //read permission locks cannot be set on users, so we check node-types differently for read permission
         switch (node.nodeType) {
             case NodeType.User:
                 break;
@@ -283,7 +324,7 @@ public class FileSystem : MonoBehaviour
         //password
         if (n.locked) {
             string passwordStr = chunk[5].Split(' ')[1];
-            n.password = passwordStr;
+            n.password = passwordStr.Substring(0, name.Length - 1);                //DELETES THE CARRAIGE RETURN CHARACTER;
         }
         else
             n.password = null; //don't even try to parse a password if locked wasn't enabled
