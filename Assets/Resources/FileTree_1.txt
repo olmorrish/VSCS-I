@@ -32,7 +32,7 @@ Owner: Guest
 LockBit: 0
 Password: NA
 NT:
-FT: 	As you have likely discovered, navigation feedback is given by the left screen, the NAVIGATION TERMINAL. Here are the most basic commands you may require to continue:||"HELP" will bring up a menu of the most important commands, without you having to reopen the manual.|"GOTO X" will open any file or directory named "X".|"OPEN X" will do the same thing as GOTO.|"BACK" will return you to the parent directory.|"LIST" will display all files in your current directory.|"LOST" will remind you of your current location in the file system.||	If you are ever confused, remember, tell us you're LOST and ask for HELP! Alternatively, consult the manual here, or refer to documentation outside of the computer system.
+FT: 	As you have likely discovered, navigation feedback is given by the left screen, the NAVIGATION TERMINAL. Here are the most basic commands you may require to continue:||"HELP" will bring up a menu of the most important commands, without you having to reopen the manual.|"OPEN X" will open any file or directory named "X".|"OPEN X Y" will unlock file or directory "X" with password "Y". |"GOTO X" will do the same thing as GOTO.|"BACK" will return you to the parent directory.|"LIST" will display all files in your current directory.|"LOST" will remind you of your current location in the file system.||	If you are ever confused, remember, tell us you're LOST and ask for HELP! Alternatively, consult the manual here, or refer to documentation outside of the computer system.
 
 NodeType: Text
 FQName: Guest/VSCSManual/Page3
@@ -77,16 +77,25 @@ Owner: Alice
 LockBit: 0
 Password: NA
 NT:
-FT: Alice's Diary - June 23rd, 1966||	Today was a good day. The end.
+FT: Alice's Diary - June 23rd, 1966||	Today my parents bought the VSCS-I personal home computer system, which they say is super advanced. I think it's SOOOOOO GREAT. I will use it to keep a diary... and stuff. |	Okay, bye 
 
 NodeType: Text
-FQName: Alice/MyDiary/Jun24
+FQName: Alice/MyDiary/Jun25
 ReadBit: 1
 Owner: Alice
 LockBit: 0
 Password: NA
 NT:
-FT: Alice's Diary - June 24th, 1966||	I will fill in the details later, since right now I do not have time to jokingly roleplay as a fictional ten-year-old for this also fictional computer system lol.
+FT: Alice's Diary - June 25th, 1966||	Dear Diary,|	Today, I turned 11 years old. That sure was GREAT. I got a bike and a puppy and all sorts of... stuff.|	Anyways, that's 150 characters, BYE!
+
+NodeType: Text
+FQName: Alice/MyDiary/Jun26
+ReadBit: 1
+Owner: Alice
+LockBit: 0
+Password: NA
+NT:
+FT: Alice's Diary - June 26th, 1966||	Dear Diary, |	Today, my bosses asked me to write up ANOTHER diary entry for the fictional little girl who uses the VSCS-I. I was SOOOOO HAPPY.|	Honestly though, why doesn't John just get his OWN daughter to write these things instead of me? Oh right, because the UI for this stupid thing is too complicated for a child. Like a kid would ever keep a diary on this thing. What a joke. |	Whatever, it's not like John's gonna read this anyways. I could put whatever I want in these placeholders, he won't check.
 
 NodeType: Text
 FQName: Alice/MyDiary/PLEASEHELP
@@ -98,10 +107,10 @@ NT:
 FT: 	It might be too late.|	If you've purchased this computer, it's probably a relic now, but I need your help. I'm writing this in the year 1977. This message won't appear in the files of the default profile for another 25 years (give or take a few if the system clock is off). This was the only way I could hide this information without them finding out I was leaking it. Chances are, if you're reading this, they've probably already killed me.|	There's too much data to display it all here. Know this: the VSCS-I is DEEPLY FLAWED. If you're smart, you can piece everything together. My documents will be scattered everywhere. Aside from this file, I don't know where in the system they'll turn up. It'll be worse if this thing's been around for a while - there might be a few user profiles.|	If you're not one of them, I'm begging you, keep digging. It'll all become clear. Please.|| - M
 
 NodeType: Text
-FQName: Alice/MyDiary/Jun25
+FQName: Alice/MyDiary/Jul2
 ReadBit: 1
 Owner: Alice
 LockBit: 0
 Password: NA
 NT:
-FT: Alice's Diary - June 25th, 1966||	Pretty spooky, huh?
+FT: Alice's Diary - July 2nd, 1966||	Dear Diary, |	<This entry will contain another hint in a future version.>
