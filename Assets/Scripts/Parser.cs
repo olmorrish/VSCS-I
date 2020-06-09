@@ -17,6 +17,8 @@ public class Parser : MonoBehaviour
 
     private InputField inputField;
 
+    private string previousCommand;
+
     //cinematics
     public GameObject spookyMusicObject;
     private AudioSource spookyMusic;
@@ -28,6 +30,8 @@ public class Parser : MonoBehaviour
         fileTextPrinter = fileTextObject.GetComponent<TerminalPrinter>();
         inputField = gameObject.GetComponent<InputField>();
         fileSystem = fileSystemObject.GetComponent<FileSystem>();
+
+        previousCommand = null;
 
         //cinematics
         spookyMusic = spookyMusicObject.GetComponent<AudioSource>();
@@ -41,7 +45,11 @@ public class Parser : MonoBehaviour
         inputField.Select();
         inputField.ActivateInputField();
 
+        //ENTER KEY
         if (Input.GetKeyDown(KeyCode.Return)) {
+
+            //every command is added to a memory of previous commands, then limit total memory to ten 
+            previousCommand = inputField.text;
 
             //the parser will only process a command if the nav terminal is nto currently printing; pevents command spam
             if (navTextPrinter.TerminalIdle()) {
@@ -52,6 +60,10 @@ public class Parser : MonoBehaviour
             inputField.text = "";
         }
 
+        else if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            inputField.text = previousCommand;
+        }
+        
     }
 
     public void Parse(string rawInput) {
@@ -112,17 +124,21 @@ public class Parser : MonoBehaviour
                 }
                 break;
             case "GOTO":
-                //if (inputs.Length != 2) {
-                //    navTextPrinter.FeedLine("> GOTO requires a single argument to function.");
-                //    navTextPrinter.FeedLine("> Format: GOTO X, where X is your destination.");
-                //}
-                //else
-                //    fileSystem.OpenRequest(inputs[1]);
+                if (inputs.Length < 2) {
+                    navTextPrinter.FeedLine("> GOTO requires an argument.");
+                    navTextPrinter.FeedLine("> Format: GOTO X, where X is a file to open.");
+                }
+                else if (inputs.Length == 2) {    //player is attempting to open with no password
+                    fileSystem.OpenRequest(inputs[1], null);
+                }
+                else {  //player must be attempting to open with password; second arg is passed in as pwd
+                    fileSystem.OpenRequest(inputs[1], inputs[2]);
+                }
                 break;
             case "OPEN":
                 if (inputs.Length < 2) {
-                    navTextPrinter.FeedLine("> OPEN requires a single argument to function.");
-                    navTextPrinter.FeedLine("> Format: OPEN X, where X is the file to open.");
+                    navTextPrinter.FeedLine("> OPEN requires an argument.");
+                    navTextPrinter.FeedLine("> Format: OPEN X, where X is a file to open.");
                 }
                 else if(inputs.Length == 2) {    //player is attempting to open with no password
                     fileSystem.OpenRequest(inputs[1], null); 
@@ -130,9 +146,26 @@ public class Parser : MonoBehaviour
                 else {  //player must be attempting to open with password; second arg is passed in as pwd
                     fileSystem.OpenRequest(inputs[1], inputs[2]);
                 }
+                break;
+            case "CD":
+                if (inputs.Length < 2) {
+                    navTextPrinter.FeedLine("> Command requires an argument.");
+                }
+                else if (inputs.Length == 2) {    //player is attempting to open with no password
 
+                    if (inputs[1].Equals(".."))
+                        fileSystem.BackRequest();
+                    else
+                        fileSystem.OpenRequest(inputs[1], null);
+                }
+                else {  //player must be attempting to open with password; second arg is passed in as pwd
+                    fileSystem.OpenRequest(inputs[1], inputs[2]);
+                }
                 break;
             case "BACK":
+                fileSystem.BackRequest();
+                break;
+            case "CD..":
                 fileSystem.BackRequest();
                 break;
             case "LOST":

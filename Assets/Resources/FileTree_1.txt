@@ -113,7 +113,16 @@ Owner: Alice
 LockBit: 0
 Password: NA
 NT:
-FT: Alice's Diary - July 2nd, 1966||	Dear Diary, |	<This entry will contain another hint in a future version.>
+FT: Alice's Diary - July 2nd, 1966||	DEAR DIARYYYYY, |	Well, John's not renewing my contract anymore, so I guess I'm burning this system down with me. I hope he enjoys having his pathetic excuse for encryption explained to every user of his system. |	The VSCS is completely busted. The Alice profile stores all the passwords for the system to check against, and anyone can read them. Now get this: the system "encrypts" user passwords under a Caesar cipher. A CAESAR CIPHER. It's so weak it's embarassing. It just takes the list: |	  "abc...xyzABC...XYZ1234567890"|	and it stores every character of the password as the character that's three to the left of it in the list.|	So, future product-owner, all anyone has to do to access ANY PROFILE on  your machine is to look at any password in that file, then shift every character THREE TO THE LEFT in the list. Then BAM, that's the raw password.|	That's what John gets for not only using a shift cipher, but also using the same key every single time. Hilarious.
+
+NodeType: Text
+FQName: Alice/MyDiary/Jul5
+ReadBit: 1
+Owner: Alice
+LockBit: 0
+Password: NA
+NT:
+FT: Alice's Diary - July whocares-th, 19-sixty-blegh||	So like, if the password was "HeLL0", right? Then it'd be stored in the system as "KhOOc" -  you just shift each letter down three times. So "y" becomes "B". The zero at the end of "HeLL0" is kinda weird since it turns into a "c" - the list loops if you hit the end.|	Just remember that it's all the lowercase letters in order, then the uppercase letters, then the numbers 1-9 and then 0.|	"abc...xyzABC...XYZ1234567890"||	So congrats, now you're an amateur cryptographer, lucky you. Though it's not like anyone WITH A BRAIN has actually encrypted anything like this for the past thousand years and expected it to stay secret. I told him it was stupid, but did he listen?|	NoooooOOOOooooo
 --
 NodeType: Text
 FQName: Alice/PwdLog
@@ -122,4 +131,4 @@ Owner: Alice
 LockBit: 0
 Password: NA
 NT:
-FT: Encrypted Password Reference||USER Shawn -> PASSWORD GrjvUju0
+FT: Encrypted Password Reference||USER Monica -> SdVVZrUG4||USER Shaun -> PASSWORD GrjvUjua||User G0ldf$h -> PASSWORD <INVALID CHAR:^;g(;ERR*4>
