@@ -114,3 +114,12 @@ LockBit: 0
 Password: NA
 NT:
 FT: Alice's Diary - July 2nd, 1966||	Dear Diary, |	<This entry will contain another hint in a future version.>
+--
+NodeType: Text
+FQName: Alice/PwdLog
+ReadBit: 1
+Owner: Alice
+LockBit: 0
+Password: NA
+NT:
+FT: Encrypted Password Reference||USER Shawn -> PASSWORD GrjvUju0

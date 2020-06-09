@@ -1,0 +1,9 @@
+NodeType: User
+FQName: Home/Shaun
+ReadBit: 1
+Owner: Shaun
+LockBit: 1
+Password: DogsRgr8
+NT:
+FT:
+

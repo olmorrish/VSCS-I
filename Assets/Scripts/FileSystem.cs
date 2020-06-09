@@ -86,6 +86,7 @@ public class FileSystem : MonoBehaviour
                         }
                         else {
                             navTextPrinter.FeedLine("> Incorrect password.");
+                            Debug.Log("Player entered \"" + optionalPassword + "\" but the correct password is \"" + child.password + "\".");
                         }
                     }
                     else if (child.locked){
@@ -324,7 +325,7 @@ public class FileSystem : MonoBehaviour
         //password
         if (n.locked) {
             string passwordStr = chunk[5].Split(' ')[1];
-            n.password = passwordStr.Substring(0, name.Length - 1);                //DELETES THE CARRAIGE RETURN CHARACTER;
+            n.password = passwordStr.Substring(0, passwordStr.Length - 1);                //DELETES THE CARRAIGE RETURN CHARACTER;
         }
         else
             n.password = null; //don't even try to parse a password if locked wasn't enabled
