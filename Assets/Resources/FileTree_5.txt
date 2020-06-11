@@ -1,0 +1,44 @@
+NodeType: User
+FQName: Home/Rick
+ReadBit: 1
+Owner: Rick
+LockBit: 1
+Password: HANDHOOKCARDOOR
+NT:
+FT:
+
+NodeType: Directory
+FQName: Rick/SecretFiles
+ReadBit: 0
+Owner: Rick
+LockBit: 0
+Password: 
+NT:
+FT:
+
+NodeType: Text
+FQName: Rick/SecretFiles/TheEnd1
+ReadBit: 1
+Owner: Rick
+LockBit: 0
+Password: 
+NT:
+FT: 	Good, looks like you solved the puzzle. The secret documents are in the next file. Be sure to read them closely, they're important government secrets.|	Take them to the news, if you can. Spread the word. Tell everyone.
+
+NodeType: Text
+FQName: Rick/SecretFiles/TheEnd2
+ReadBit: 1
+Owner: Rick
+LockBit: 0
+Password: 
+NT:
+FT: W3'R3 N0 STR@NG3R5 T0 L0V3 ... <3|Y0U KN0W TH3 RUL35 @ND S0 D0 1|@ FU11 C0MM1TM3NT'5 WH47 1'M 7H1NK1NG 0F|U W0U1DN'7 G37 7H1$ FR0M @NY 07H3R 6UY||1 JU5T W4NN4 T3LL U H0W 1'M F33L1NG|G077@ M@k3 U UND3R57@ND||	N3V3R 60NN@ G1V3 U UP||	N3VER G0NN@ L37 U D0WN||	N3V3R G0NN4 RUN @R0UND & D3S3RT U||	N3V3R 60NN@ M@K3 U CRY||	N3V3R G0NN@ S@Y G00DBY3||	NEV3R 60NN4 T3ll A L13 & HUR7 U|||<3  <3  <3  <3  <3
+
+NodeType: Text
+FQName: Rick/SecretFiles/TheEnd3
+ReadBit: 1
+Owner: Rick
+LockBit: 0
+Password: 
+NT:
+FT: 	Thank you for playing!||	Apologies for the Rick-Roll, but development time was tight and there wasn't enough time to include a full story, so focus went in to creating a unique experience instead. VSCS-I will likely be in development for a while after this build, so check back every so often to see if a full version (with an actual story) has been released. I plan to keep working on it for a little while.||	- Oliver

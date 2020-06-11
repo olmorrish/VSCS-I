@@ -5,7 +5,8 @@ using UnityEngine;
 public enum NodeType {
     User,
     Directory,
-    Text
+    Text,
+    MEGA
 }
 
 public class FileNode {

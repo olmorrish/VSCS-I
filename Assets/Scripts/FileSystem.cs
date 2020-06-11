@@ -19,11 +19,15 @@ public class FileSystem : MonoBehaviour
     private TerminalPrinter navTextPrinter;
     private TerminalPrinter fileTextPrinter;
 
+    public bool playerHasMEGAPermissions;
+
 
     //public bool runBuildRoutineFromFiles;
 
     // Start is called before the first frame update
     void Start() {
+
+        playerHasMEGAPermissions = false;
 
         //get references to the two terminals and the constructor
         navTextPrinter = navTextObject.GetComponent<TerminalPrinter>();
@@ -56,7 +60,11 @@ public class FileSystem : MonoBehaviour
                 //first, check that the file is not a (non-user) file that is restricted by read-permissions
                 if (PlayerCanOpen(child)) {   
 
-                    if (child.nodeType == NodeType.Text) {
+                    if(child.nodeType == NodeType.MEGA) {
+                        playerHasMEGAPermissions = true; //things are about to get weird
+                    }
+
+                    else if (child.nodeType == NodeType.Text) {
                         //text nodes are special; we don't navigateinto them, we just read them
                         fileTextPrinter.Wipe(); //clear space for the new file
                         navTextPrinter.FeedLine("> File opened.");
@@ -94,9 +102,9 @@ public class FileSystem : MonoBehaviour
                     }
 
                     //2. READ PERMISSION CHECKS - The file is not password locked; permission must have been denied due to read permission error.
-                    else if (!child.playerReadPermission) {
+                    else if (!child.playerReadPermission || !playerHasMEGAPermissions) {
                         navTextPrinter.FeedLine("> You do not have permission to access this file (ERR: read permission [_]).");
-                        navTextPrinter.FeedLine("> Please contact a MEGA user to alter this file's read permission state to [R].");
+                        navTextPrinter.FeedLine("> If you are a MEGA user, run MEGA.EXE to gain permission to all files.");
 
                     }
                 }
@@ -226,6 +234,10 @@ public class FileSystem : MonoBehaviour
                 if (!node.playerReadPermission)
                     readPermissionIssue = true;
                 break;
+        }
+
+        if (playerHasMEGAPermissions) {
+            readPermissionIssue = false;
         }
 
         return !(passwordIssue || readPermissionIssue); //if either flag was tripped, player is not allowed access; return false

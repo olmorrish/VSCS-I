@@ -1,0 +1,26 @@
+NodeType: User
+FQName: Home/G0ldf$h
+ReadBit: 1
+Owner: Shaun
+LockBit: 1
+Password: $$$
+NT:
+FT:
+
+NodeType: User
+FQName: G0ldf$h/N0t3s
+ReadBit: 1
+Owner: Shaun
+LockBit: 0
+Password:
+NT:
+FT:
+
+NodeType: User
+FQName: G0ldf$h/N0t3s/Log1
+ReadBit: 1
+Owner: Shaun
+LockBit: 0
+Password:
+NT:
+FT:		I've been messing around with this old piece of junk mom brought home. I think I managed to mess it up pretty nicely. I already managed to break the password storage in the Alice profile by making sure my password didn't have any numbers or letter in it; it still seems to work though.||	This thing is honestly kinda c00l. I managed to get my hands on the MEGA exe thingy because some d1ngus left notes about how his old boss just left it lying around. I moved it to a folder in some old profile for a guy named "shaun". Locked it with the usual password.|	As long as nobody can get a hold of it, I'm basically the owner of this computer now. I'm like god. Pretty good for a 15 year old. 

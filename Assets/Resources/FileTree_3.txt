@@ -1,0 +1,35 @@
+NodeType: User
+FQName: Home/Monica
+ReadBit: 1
+Owner: Shaun
+LockBit: 1
+Password: PaSSWoRD1
+NT:
+FT:
+
+NodeType: User
+FQName: Home/Shaun
+ReadBit: 1
+Owner: Shaun
+LockBit: 1
+Password: DogsRgr8
+NT:
+FT:
+--- 
+NodeType: Directory
+FQName: Shaun/megaEXE
+ReadBit: 1
+Owner: Shaun
+LockBit: 1
+Password: $$$
+NT:
+FT:
+
+NodeType: MEGA
+FQName: Shaun/megaEXE/MEGA.EXE
+ReadBit: 1
+Owner: G0ldf$h
+LockBit: 0
+Password: 
+NT: > MEGA permissions have been enabled for current session, and all read permission locks have been turned off. 
+FT:
