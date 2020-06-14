@@ -1,13 +1,4 @@
 NodeType: User
-FQName: Home/Monica
-ReadBit: 1
-Owner: Shaun
-LockBit: 1
-Password: PaSSWoRD1
-NT:
-FT:
-
-NodeType: User
 FQName: Home/Shaun
 ReadBit: 1
 Owner: Shaun
@@ -15,9 +6,90 @@ LockBit: 1
 Password: DogsRgr8
 NT:
 FT:
---- 
+
+NodeType: Text
+FQName: Shaun/PwdLogSHA
+ReadBit: 1
+Owner: Shaun
+LockBit: 0
+Password:
+NT:
+FT: SHA-1 Hashed Password Reference||USER Shaun -> |46f633b9f7bbd3f090b039068b3288e5d321dba8||USER Monica -> |e38ad214943daad1d64c102faec29de4afe9da3d||USER G0ldf$h -> |be75445ca37b9bee6c5b05692dd23d25ba08c180
+
 NodeType: Directory
-FQName: Shaun/megaEXE
+FQName: Shaun/Journal
+ReadBit: 1
+Owner: Shaun
+LockBit: 0
+Password:
+NT:
+FT:
+
+NodeType: Text
+FQName: Shaun/Journal/Dec18
+ReadBit: 1
+Owner: Shaun
+LockBit: 0
+Password:
+NT:
+FT: Dec 18, 1996||	Picked up one of those old VSCS-I machines at a garage sale the other day, just for kicks. Monica also thought it was pretty neat; she loves anything retro-futuristic. Honestly they should make one of those PC games with that theme. |	This thing is SUPER bulky - not like the IBM stuff I use at work. The fan honestly never stops and the drive is constantly spinning... not sure why though. I'm no engineer, but it seems pretty inefficient. 
+
+NodeType: Text
+FQName: Shaun/Journal/Dec29
+ReadBit: 1
+Owner: Shaun
+LockBit: 0
+Password:
+NT:
+FT: Dec 29, 1996||	Why is the password log so easy to break?|	I guess the rumors were true about this thing - one of the employees actually DID sabotage the whole operation. No wonder it sold so poorly. "VSCS" is pretty funny name for this thing in hindsight, but I guess it was one of the first consumer machines to do the whole "user" thing.|	There doesn't seem to be a way to change passwords or delete users either which seems... stupid?||	Honestly the more I read, the more I'm convinced that this thing was designed in like, a month. Two, tops.
+
+NodeType: Text
+FQName: Shaun/Journal/Jan8
+ReadBit: 1
+Owner: Shaun
+LockBit: 0
+Password:
+NT:
+FT: Jan 8, 1997||	Seems like the tech gods have answered my prayers. The parent company of VSCS is still kicking around, and they released a drive that uses some fancy new "SHA hashing" for the passwords for its 20th anniversary. They were actually off by a couple years, so it's not 20 years though?? Odd people, doesn't matter. |	I'm probably the only one who bought the thing, anyways - why release a security update for a machine that was released before security updates were a thing????. ||	Anyways, I'm gonna see if I can get it to work. It takes an insane number of cables to update the thing, but I'm still off work for another week so it'll give me something to do.
+
+NodeType: Text
+FQName: Shaun/Journal/Jan12
+ReadBit: 1
+Owner: Shaun
+LockBit: 0
+Password:
+NT:
+FT: Jan 12, 1997||	I've changed the way the machine stores passwords to check if they're correct. Now, it'll store them in a text file in my directory, and they should be barely human-readable.|| It's called "sexadecimal" I think, just numbers an ABCDEF. The computer should store "hashes" of our passwords - it can shash them when we enter them to check if they're right, BUT it can't reverse the hashes to get the passwords back. Pretty clever||	I don't think anyone could find the password unless there was some database on the Web to search. Not like anything like that would be possible - how would anybody find it? Not like you can just plug in a "hash" and get the password from a database.
+
+NodeType: Text
+FQName: Shaun/Journal/Jan13
+ReadBit: 1
+Owner: Shaun
+LockBit: 0
+Password:
+NT:
+FT: Jan 13, 1997||	Aaaaand my poorly encrypted password is still in the "Alice" folder! I give up -  I'm giving this thing to Monica. She definitely doesn't care about the security stuff at all, though I'm mostly just mad because of the name. ||	Seriously though...||VERY|SECURE|COMPUTER|SYSTEM|| No wonder there wasn't a Mark II, haha. 
+
+NodeType: Text
+FQName: Shaun/Journal/Fragment2
+ReadBit: 1
+Owner: Shaun
+LockBit: 0
+Password:
+NT:
+FT:	Sometimes, something that's secure today isn't secure tomorrow. People are crafty.||The second fragment is: HOOK||	- Rick 
+----------------------------------------------------------
+NodeType: User
+FQName: Home/Monica
+ReadBit: 1
+Owner: Shaun
+LockBit: 1
+Password: password1
+NT:
+FT:
+----------------------------------------------------------
+NodeType: Directory
+FQName: Shaun/Mega
 ReadBit: 1
 Owner: Shaun
 LockBit: 1
@@ -26,7 +98,7 @@ NT:
 FT:
 
 NodeType: MEGA
-FQName: Shaun/megaEXE/MEGA.EXE
+FQName: Shaun/Mega/MEGA.EXE
 ReadBit: 1
 Owner: G0ldf$h
 LockBit: 0
