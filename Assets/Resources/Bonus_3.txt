@@ -1,0 +1,9 @@
+NodeType: Directory
+FQName: Challenges/ChallengePack3
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password:
+NT:
+FT:
+

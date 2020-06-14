@@ -6,7 +6,8 @@ public enum NodeType {
     User,
     Directory,
     Text,
-    MEGA
+    MEGA,
+    END
 }
 
 public class FileNode {

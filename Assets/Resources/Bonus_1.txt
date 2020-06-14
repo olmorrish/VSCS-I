@@ -1,0 +1,18 @@
+NodeType: User
+FQName: Home/Challenges
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password:
+NT:
+FT:
+
+NodeType: Directory
+FQName: Challenges/ChallengePack1
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password:
+NT:
+FT:
+

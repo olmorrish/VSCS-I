@@ -7,7 +7,7 @@ Password: $$$
 NT:
 FT:
 
-NodeType: User
+NodeType: Directory
 FQName: G0ldf$h/N0t3s
 ReadBit: 1
 Owner: Shaun
@@ -16,11 +16,20 @@ Password:
 NT:
 FT:
 
-NodeType: User
+NodeType: Text
 FQName: G0ldf$h/N0t3s/Log1
 ReadBit: 1
-Owner: Shaun
+Owner: G0ldf$sh
 LockBit: 0
 Password:
 NT:
-FT:		I've been messing around with this old piece of junk mom brought home. I think I managed to mess it up pretty nicely. I already managed to break the password storage in the Alice profile by making sure my password didn't have any numbers or letter in it; it still seems to work though.||	This thing is honestly kinda c00l. I managed to get my hands on the MEGA exe thingy because some d1ngus left notes about how his old boss just left it lying around. I moved it to a folder in some old profile for a guy named "shaun". Locked it with the usual password.|	As long as nobody can get a hold of it, I'm basically the owner of this computer now. I'm like god. Pretty good for a 15 year old. 
+FT: 	I've been messing around with this old piece of junk mom brought home. I think I managed to mess it up pretty nicely. I already managed to break the password storage in the Alice profile by making sure my password didn't have any numbers or letter in it; it still seems to work though.||	This thing is honestly kinda c00l. I managed to get my hands on the MEGA exe thingy because some d1ngus left notes about how his old boss just left it lying around. I moved it to a folder in some old profile for a guy named "shaun". Locked it with the usual password.|	As long as nobody can get a hold of it, I'm basically the owner of this computer now. I'm like god. Pretty good for a 15 year old. 
+
+NodeType: Text
+FQName: G0ldf$h/N0t3s/Fragment4
+ReadBit: 1
+Owner: Rick
+LockBit: 0
+Password:
+NT:
+FT: 	A word of warning: you might want to make sure you get MEGA privileges before you use that password of mine. It shouldn't be too hard.|	Remember: the weakest link in a security system is always the user.||The fourth and final fragment is: DOOR||	- Rick

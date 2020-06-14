@@ -44,13 +44,13 @@ NT:
 FT: Alice's Diary - June 26th, 1966||	Dear Diary, |	Today, my bosses asked me to write up ANOTHER diary entry for the fictional little girl who uses the VSCS-I. I was SOOOOO HAPPY.|	Honestly though, why doesn't John just get his OWN daughter to write these things instead of me? Oh right, because the UI for this stupid thing is too complicated for a child. Like a kid would ever keep a diary on this thing. What a joke. |	Whatever, it's not like John's gonna read this anyways. I could put whatever I want in these placeholders, he won't check.
 
 NodeType: Text
-FQName: Alice/MyDiary/PLEASEHELP
+FQName: Alice/MyDiary/PUZZLE
 ReadBit: 1
 Owner: Alice
 LockBit: 0
 Password: NA
 NT:
-FT: 	It might be too late.|	If you've purchased this computer, it's probably a relic now, but I need your help. I'm writing this in the year 1977. This message won't appear in the files of the default profile for another 25 years (give or take a few if the system clock is off). This was the only way I could hide this information without them finding out I was leaking it. Chances are, if you're reading this, they've probably already killed me.|	There's too much data to display it all here. Know this: the VSCS-I is DEEPLY FLAWED. If you're smart, you can piece everything together. My documents will be scattered everywhere. Aside from this file, I don't know where in the system they'll turn up. It'll be worse if this thing's been around for a while - there might be a few user profiles.|	If you're not one of them, I'm begging you, keep digging. It'll all become clear. Please.|| - M
+FT: 	Hope you're having fun reading those diary entries - they get surprisingly entertaining, in my opinion. Employees are only fun when they're disgruntled.|	So you've purchased this old computer. It's a relic now for sure - it was when I bought it as well. I've had a bit of fun with it, though. The VSCS-I is HILARIOUSLY flawed - almost anyone schmuck can crack it. If you're smart, you can piece together the password to my account, where I've hidden some valuable information. Trust me, it's worth it.|	I've scattered four pieces of my password across all the old users as a puzzle for the next owner of this fine machine. All you have to do is be resourceful: concatenate all the pieces together, and you can get access to my account and everything it holds.|	Have fun.||	- Rick||PS: The first fragment is: HAND
 
 NodeType: Text
 FQName: Alice/MyDiary/Jul2
@@ -86,4 +86,4 @@ Owner: Alice
 LockBit: 0
 Password: NA
 NT:
-FT: Encrypted Password Reference||USER Monica -> SdVVZrUG4||USER Shaun -> PASSWORD GrjvUjua||User G0ldf$h -> PASSWORD <INVALID CHAR:^;g(;ERR*4>
+FT: Encrypted Password Reference||USER Shaun -> PASSWORD GrjvUjua||USER Monica -> <DATA CORRUPT:@#ERR%>||User G0ldf$h -> PASSWORD <INVALID CHAR:^;g(;ERR*4>

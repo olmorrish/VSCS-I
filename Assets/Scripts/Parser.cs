@@ -20,8 +20,8 @@ public class Parser : MonoBehaviour
     private string previousCommand;
 
     //cinematics
-    public GameObject spookyMusicObject;
-    private AudioSource spookyMusic;
+    public GameObject endingMusicObject;
+    private AudioSource endingMusic;
 
     // Start is called before the first frame update
     void Start(){
@@ -34,7 +34,7 @@ public class Parser : MonoBehaviour
         previousCommand = null;
 
         //cinematics
-        spookyMusic = spookyMusicObject.GetComponent<AudioSource>();
+        endingMusic = endingMusicObject.GetComponent<AudioSource>();
 
     }
 
@@ -70,15 +70,13 @@ public class Parser : MonoBehaviour
         
         
         //SPECIAL CINEMATIC TRIGGERS
-        if (rawInput.ToUpper().Equals("OPEN PLEASEHELP", StringComparison.CurrentCultureIgnoreCase)
-            || rawInput.ToUpper().Equals("GOTO PLEASEHELP", StringComparison.CurrentCultureIgnoreCase) 
-            || rawInput.ToUpper().Equals("CD PLEASEHELP", StringComparison.CurrentCultureIgnoreCase)){
-
-                spookyMusic.Play();
+        if (rawInput.ToUpper().Contains("OPEN THEEND2")
+            || rawInput.ToUpper().Contains("GOTO THEEND2") 
+            || rawInput.ToUpper().Contains("CD THEEND2")){
+                
+                endingMusic.Play();
         }
-        
-                
-                
+
         string[] inputs = rawInput.Split(' ');
         string command = inputs[0].ToUpper();
 

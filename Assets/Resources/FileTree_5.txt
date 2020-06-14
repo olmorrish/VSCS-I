@@ -41,4 +41,13 @@ Owner: Rick
 LockBit: 0
 Password: 
 NT:
-FT: 	Thank you for playing!||	Apologies for the Rick-Roll, but development time was tight and there wasn't enough time to include a full story, so focus went in to creating a unique experience instead. VSCS-I will likely be in development for a while after this build, so check back every so often to see if a full version (with an actual story) has been released. I plan to keep working on it for a little while.||	- Oliver
+FT: 	Thank you for playing!||	Apologies for the Rick-Roll, but development time was tight and there wasn't enough time to include a full story, so focus went in to creating a unique experience instead. VSCS-I will likely be in development for a while after this build, so check back every so often to see if a full version (with an actual story) has been released. I plan to keep working on it for a little while.||	- Oliver||PS: Run CHALLENGES.EXE to unlock a few bonus challenge puzzles from the home directory.
+
+NodeType: END
+FQName: Rick/SecretFiles/CHALLENGES.EXE
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password: 
+NT:
+FT:

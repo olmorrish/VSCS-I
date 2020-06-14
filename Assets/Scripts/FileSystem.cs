@@ -61,7 +61,16 @@ public class FileSystem : MonoBehaviour
                 if (PlayerCanOpen(child)) {   
 
                     if(child.nodeType == NodeType.MEGA) {
+                        navTextPrinter.FeedLine("> MEGA PERMISSIONS GRANTED.");
                         playerHasMEGAPermissions = true; //things are about to get weird
+                    }
+                    else if (child.nodeType == NodeType.END) {
+                        AddFileContentsToTree("Bonus_1");
+                        AddFileContentsToTree("Bonus_2");
+                        AddFileContentsToTree("Bonus_3");
+
+                        navTextPrinter.FeedLine("> POST-GAME CHALLENGES ADDED");
+                        navTextPrinter.FeedLine("> Return to home directory to view.");
                     }
 
                     else if (child.nodeType == NodeType.Text) {
@@ -253,12 +262,12 @@ public class FileSystem : MonoBehaviour
      */
     private void RunBuildRoutine() {
         for (int i = 1; i < numberOfFilesToProcess + 1; i++) {
-            AddFileContentsToTree(i);
+            AddFileContentsToTree("FileTree_" + i.ToString());
         }
     }
 
-    private void AddFileContentsToTree(int fileNumber) {
-        string rawText = Resources.Load<TextAsset>("FileTree_" + fileNumber.ToString()).text;
+    public void AddFileContentsToTree(string fileName) {
+        string rawText = Resources.Load<TextAsset>(fileName).text;
         string[] lines = rawText.Split('\n');
 
         int numLinesRemaining = lines.Length;
