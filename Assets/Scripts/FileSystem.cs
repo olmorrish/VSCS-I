@@ -100,6 +100,11 @@ public class FileSystem : MonoBehaviour
                                 navTextPrinter.FeedLine("> User profile " + child.nodeName + " unlocked.");
                             else
                                 navTextPrinter.FeedLine("> File unlocked successfully.");
+
+                            //enter node after unlocking
+                            currentNode = child;
+                            string location = GetCurrentFQN();
+                            navTextPrinter.FeedLine("> Now at: " + location.ToUpper());
                         }
                         else {
                             navTextPrinter.FeedLine("> Incorrect password.");

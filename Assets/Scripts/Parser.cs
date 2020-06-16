@@ -17,6 +17,9 @@ public class Parser : MonoBehaviour
 
     private InputField inputField;
 
+    public GameObject confirmBeepObject;
+    private AudioSource confirmBeep;
+
     private string previousCommand;
 
     //cinematics
@@ -30,6 +33,9 @@ public class Parser : MonoBehaviour
         fileTextPrinter = fileTextObject.GetComponent<TerminalPrinter>();
         inputField = gameObject.GetComponent<InputField>();
         fileSystem = fileSystemObject.GetComponent<FileSystem>();
+
+        confirmBeep = confirmBeepObject.GetComponent<AudioSource>();
+        confirmBeep.time = 0.1f;
 
         previousCommand = null;
 
@@ -53,6 +59,7 @@ public class Parser : MonoBehaviour
 
             //the parser will only process a command if the nav terminal is nto currently printing; pevents command spam
             if (navTextPrinter.TerminalIdle()) {
+                confirmBeep.Play();
                 Parse(inputField.text);
             }
 
@@ -70,9 +77,9 @@ public class Parser : MonoBehaviour
         
         
         //SPECIAL CINEMATIC TRIGGERS
-        if (rawInput.ToUpper().Contains("OPEN THEEND2")
+        if ((rawInput.ToUpper().Contains("OPEN THEEND2")
             || rawInput.ToUpper().Contains("GOTO THEEND2") 
-            || rawInput.ToUpper().Contains("CD THEEND2")){
+            || rawInput.ToUpper().Contains("CD THEEND2")) && fileSystem.playerHasMEGAPermissions){
                 
                 endingMusic.Play();
         }
@@ -80,9 +87,7 @@ public class Parser : MonoBehaviour
         string[] inputs = rawInput.Split(' ');
         string command = inputs[0].ToUpper();
 
-
-
-
+        
 
         switch (command) {
             case "HELP":
@@ -174,7 +179,11 @@ public class Parser : MonoBehaviour
             /////////////////////////
             // EASTER EGG COMMANDS //
             /////////////////////////
-            
+            case "JOJO":
+                navTextPrinter.FeedLine("> JJBA challenge pack added to HOME directory.");
+                navTextPrinter.FeedLine("> It's a good show, okay?");
+                fileSystem.AddFileContentsToTree("JoJo");
+                break;
             case "META":
                 navTextPrinter.FeedLine("> M E T A");
                 navTextPrinter.FeedLine("> E");

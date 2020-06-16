@@ -82,11 +82,65 @@ FT:	Sometimes, something that's secure today isn't secure tomorrow. People are c
 NodeType: User
 FQName: Home/Monica
 ReadBit: 1
-Owner: Shaun
+Owner: Monica
 LockBit: 1
 Password: password1
 NT:
 FT:
+
+NodeType: Directory
+FQName: Monica/Test
+ReadBit: 1
+Owner: Monica
+LockBit: 0
+Password:
+NT:
+FT:
+
+NodeType: Text
+FQName: Monica/Test/Fragment3
+ReadBit: 1
+Owner: Rick
+LockBit: 0
+Password:
+NT:
+FT:	People are predictable. They repeat things they've picked up. Especially things they're fond of.||The third fragment is: CAR||	- Rick 
+
+NodeType: Directory
+FQName: Monica/VSCSNonsense
+ReadBit: 1
+Owner: Monica
+LockBit: 0
+Password:
+NT:
+FT:
+
+NodeType: Text
+FQName: Monica/VSCSNonsense/Jan14
+ReadBit: 1
+Owner: Monica
+LockBit: 0
+Password:
+NT:
+FT:		Well Shaun wasn't kidding - this thing is preeeetty thrown together. I've already created a folder I can't delete and it's been about... 2 minutes?|	If Shaun's files are anything to go by, every single text document on this thing is going to just be a breakdown of why it sucks.||	Looks pretty damn cool though. That green glowing text? Chilling. It's like what someone in the 50's would think 90's computers would be like. It'd be nice if this ol' hunk of junk didn't just collect dust. It's really charming.
+
+NodeType: Text
+FQName: Monica/VSCSNonsense/Jan20
+ReadBit: 1
+Owner: Monica
+LockBit: 0
+Password:
+NT:
+FT:		My little brother Jake visited Shaun and I today; seems like we're not that different - he thinks the VSCS is cool as heck too.|	Boy does that 10-year age gap make a difference though... he's more interested in making weird art to display on the terminal and stuff. I let him set up an account on the machine and he named himself after some rap artist instead of using his real name.|	Whatever makes him happy, I guess. 
+
+NodeType: Text
+FQName: Monica/VSCSNonsense/Jan29
+ReadBit: 1
+Owner: Monica
+LockBit: 0
+Password:
+NT:
+FT:		I've been sending Jake home with the VSCS on the weekends, as long as he promises to bring it back I have to trouble with that. I don't really feel like journaling on this thing, even if I dig the ~aesthetic~ of that. This thing's more of a conversation piece, so if it makes Jake happy, that's cool with me.|	Not really sure how mom puts up with him and the rap music these days though. He won't stop writing "$$$" on everything. Dollar signs everywhere, like he's worshipping capitalism. Apparently it's a rap somg?|| How do you even pronounce "$$$"? You can't.|| Weird kid, gotta love him. 
 ----------------------------------------------------------
 NodeType: Directory
 FQName: Shaun/Mega

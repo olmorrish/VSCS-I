@@ -17,16 +17,34 @@ NT:
 FT:
 
 NodeType: Text
-FQName: G0ldf$h/N0t3s/Log1
+FQName: G0ldf$h/N0t3s/File1
 ReadBit: 1
 Owner: G0ldf$sh
 LockBit: 0
 Password:
 NT:
-FT: 	I've been messing around with this old piece of junk mom brought home. I think I managed to mess it up pretty nicely. I already managed to break the password storage in the Alice profile by making sure my password didn't have any numbers or letter in it; it still seems to work though.||	This thing is honestly kinda c00l. I managed to get my hands on the MEGA exe thingy because some d1ngus left notes about how his old boss just left it lying around. I moved it to a folder in some old profile for a guy named "shaun". Locked it with the usual password.|	As long as nobody can get a hold of it, I'm basically the owner of this computer now. I'm like god. Pretty good for a 15 year old. 
+FT:
 
 NodeType: Text
-FQName: G0ldf$h/N0t3s/Fragment4
+FQName: G0ldf$h/N0t3s/File2
+ReadBit: 1
+Owner: G0ldf$sh
+LockBit: 0
+Password:
+NT:
+FT: i've been messing around with this computer Monica lent me. i managed to mess it up PRETTY nicely.||	This thing is honestly kinda c00l. I got access on the MEGA exe thingy because some d1ngus left notes about how his old boss just left it lying around. Alice had it but didnt use a password. Hid it in Shauns foldr. Locked it with the usual password.|	As long as nobody can get a hold of it, I'm basically the owner of this computer now. I'm like cybergod. ||r@d 
+
+NodeType: Text
+FQName: G0ldf$h/N0t3s/File3
+ReadBit: 1
+Owner: G0ldf$sh
+LockBit: 0
+Password:
+NT:
+FT:    ^|  / \| /   \|/     \|l  l  l|l  l  l|\  \  /| \  \/| /\  \|/  \  \|l  l  l|l  l  l|\     /| \   / |  \ /  |   v
+
+NodeType: Text
+FQName: G0ldf$h/Fragment4
 ReadBit: 1
 Owner: Rick
 LockBit: 0

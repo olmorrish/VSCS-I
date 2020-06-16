@@ -22,7 +22,7 @@ public class AmbientAudioRandomizer : MonoBehaviour
         
         if(Time.time % 3 <= 0.05f) {
             driveSound.pitch = 1f + (Random.Range(0f, 0.07f));
-            driveSound.volume = driveSound.pitch / 12f;
+            driveSound.volume = driveSound.pitch / 10f;
         }
 
         if(Time.time % 3 < 0.05f || Time.time % 7 < 0.05f || Time.time % 13 < 0.05f) {

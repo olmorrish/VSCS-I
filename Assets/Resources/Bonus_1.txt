@@ -16,3 +16,101 @@ Password:
 NT:
 FT:
 
+NodeType: Text
+FQName: Challenges/ChallengePack1/BinaryConv
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password:
+NT:
+FT: The password is the decimal version of:||11111111 00001111 11110000 10110011||Convert each 8-bit segment into its 3-digit decimal equivalent.
+
+NodeType: Directory
+FQName: Challenges/ChallengePack1/NextLevel
+ReadBit: 1
+Owner: Oliver
+LockBit: 1
+Password: 255 015 240 179
+NT:
+FT:
+
+NodeType: Text
+FQName: Challenges/ChallengePack1/HelpDoc1
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password:
+NT:
+FT: Looks like this is just simple binary conversion to decimal numbers. I'm sure you have seen this before, but I will give you a quick refresher. Let's start with bits, and work our way up.||A bit is a BINARY DIGIT, meaning that they are either a 0 or a 1. Binary comes from the word bi- or two, so there are only two options for binary digits to be. Binary digits can be combined to create a byte, which is made of 8 digits, and can also be called a char (or character). So, as you can see, there are 4 characters in this passcode.
+
+NodeType: Text
+FQName: Challenges/ChallengePack1/HelpDoc2
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password:
+NT:
+FT: Now, to convert binary into something we can understand, we want to change it to something called DECIMAL. Decimal is the way that we are taught to count and use numbers for most of our lives. In decimal, there are 10 numbers (0-9), which we rearrange to get every possible number. Binary can do the same thing, but with only 0 and 1. Let me show you.||Look at the first character of 8 digits in this code. They are all 1's, in every placeholder. While decimal has ones, tens and hundreds as its placeholders, binary has ones, twos, fours, eights, etc. This is because binary placeholders are filled with 2^x, so in the 0th place holder (or the first), it is 2^0 or the ones position. Then 2^1 is the twos position, 2^2 is the fours position, and so on.
+
+NodeType: Text
+FQName: Challenges/ChallengePack1/HelpDoc3
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password:
+NT:
+FT: Because there is a 1 in every position in the first character, we know that there is one of every number from all of those positions. So, starting from the right (as we would with decimal , where we start from the ones), we can say that there is a 1, a 2, a 4, an 8, a 16, a 32, a 64, and a 128. By adding these all up, we get the number 255, which is the first number in the code.||Now it's your turn... find the other three numbers and input them into the system to continue, and make sure there are three numbers per slot (put a zero in front to fill it if you need to).
+--------------------------------------------------------
+NodeType: Text
+FQName: Challenges/ChallengePack1//NextLevel/HexConv
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password:
+NT:
+FT: The password is the hexadecimal version of:||11111011101110010||Convert this into its hex equivalent.
+
+NodeType: Directory
+FQName: Challenges/ChallengePack1/NextLevel/Complete
+ReadBit: 1
+Owner: Oliver
+LockBit: 1
+Password: 1F772
+NT:
+FT:
+
+NodeType: Text
+FQName: Challenges/ChallengePack1/NextLevel/HelpDoc1
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password: 
+NT:
+FT: Ah, binary to hexadecimal conversion! Thought they could be tricky. Lucky for us, this is even easier than converting from binary to decimal. I'll give you a quick refresher, anyhow.||Hexadecimal is another base you can use to store numbers. While binary is base 2 (has 2 possible digits), and decimal is base 10 (has 10 possible digits), hexadecimal is base 16 and has 16 possible digits. Instead of trying to create new symbols to represent 10, 11, 12, 13, 14 and 15, we just use A-F. So 10 is now A, 11 is B, 12 is C, 13 is D, 14 is E and 15 is F.
+
+NodeType: Text
+FQName: Challenges/ChallengePack1/NextLevel/HelpDoc2
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password: 
+NT:
+FT: Now, here comes the conversion. To get the rightmost digit of the hexadecimal number, we start with the rightmost 4 digits of the binary number. These 4 digits correlate to the rightmost hexadecimal digit, then next four to the next, all the way until there are no more left. If the binary number is not a char, byte or nybble (4 bits long), then you will have some left over digits at the left side that do not make a set of 4. Simply put as many 0's as necessary in front of those digits to make a group of 4, and continue.||The conversion after this is very similar to binary to decimal conversion. Using the placeholders you learned then, (8's, 4's, 2's, 1's) find out what the decimal number being represented by each of the nybbles (or groups of 4). Write this number below the set of 4, and then move left to do the next nybble.”
+
+NodeType: Text
+FQName: Challenges/ChallengePack1/NextLevel/HelpDoc3
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password: 
+NT:
+FT: Once you have converted each of your nybbles to a decimal number, you can now change them to hexadecimal numbers. If they are higher than 9, you have to correlate them to their letter instead (10=A, 11=B, 12=C, 13=D, 14=E, 15=F). Once you have converted to hexadecimal, simply concatenate them together to form one word. DO NOT REARRANGE THEM!! They are in the right order if they are written below the binary nybble they represent.
+-----------------------------------------------------------------
+NodeType: Text
+FQName: Challenges/ChallengePack1/NextLevel/Complete/DONE
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password: 
+NT:
+FT: Challenge Pack 1 completed!

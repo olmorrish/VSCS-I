@@ -1,0 +1,8 @@
+NodeType: User
+FQName: Home/JoJo
+ReadBit: 1
+Owner: Rick
+LockBit: 0
+Password:
+NT:
+FT:
