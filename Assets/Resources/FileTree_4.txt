@@ -23,7 +23,7 @@ Owner: G0ldf$sh
 LockBit: 0
 Password:
 NT:
-FT:
+FT:    ^|  / \| /   \|/     \|l  l  l|l  l  l|\  \  /| \  \/| /\  \|/  \  \|l  l  l|l  l  l|\     /| \   / |  \ /  |   v
 
 NodeType: Text
 FQName: G0ldf$h/N0t3s/File2
@@ -32,7 +32,7 @@ Owner: G0ldf$sh
 LockBit: 0
 Password:
 NT:
-FT: i've been messing around with this computer Monica lent me. i managed to mess it up PRETTY nicely.||	This thing is honestly kinda c00l. I got access on the MEGA exe thingy because some d1ngus left notes about how his old boss just left it lying around. Alice had it but didnt use a password. Hid it in Shauns foldr. Locked it with the usual password.|	As long as nobody can get a hold of it, I'm basically the owner of this computer now. I'm like cybergod. ||r@d 
+FT: Ive been messing around with this computer Monica lent me. i managed to mess it up PRETTY nice.||This thing is honestly kinda c00l. I got access on the MEGA exe thingy because some D1NGUS left notes about how his old boss  left it lying around. Alice had it but didnt use a password haha.|| Hid it in Shauns foldr and locked it with the usual password.||As long as nobody can get a hold of it, I'm basically the owner of this computer now. I'm like god but for compters.||Like CYB3RG0D||this is so r@d 
 
 NodeType: Text
 FQName: G0ldf$h/N0t3s/File3
@@ -41,7 +41,7 @@ Owner: G0ldf$sh
 LockBit: 0
 Password:
 NT:
-FT:    ^|  / \| /   \|/     \|l  l  l|l  l  l|\  \  /| \  \/| /\  \|/  \  \|l  l  l|l  l  l|\     /| \   / |  \ /  |   v
+FT:    $$          $$          $$| $$$$$$$$    $$$$$$$$    $$$$$$$$|$$  $$  $$  $$  $$  $$  $$  $$  $$|$$  $$   $  $$  $$   $  $$  $$   $|  $$$$        $$$$        $$$$|    $$$$        $$$$        $$$$|$   $$  $$  $   $$  $$  $   $$  $$|$$  $$  $$  $$  $$  $$  $$  $$  $$| $$$$$$$$    $$$$$$$$    $$$$$$$$|    $$          $$          $$
 
 NodeType: Text
 FQName: G0ldf$h/Fragment4

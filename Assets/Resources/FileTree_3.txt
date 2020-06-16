@@ -131,7 +131,7 @@ Owner: Monica
 LockBit: 0
 Password:
 NT:
-FT:		My little brother Jake visited Shaun and I today; seems like we're not that different - he thinks the VSCS is cool as heck too.|	Boy does that 10-year age gap make a difference though... he's more interested in making weird art to display on the terminal and stuff. I let him set up an account on the machine and he named himself after some rap artist instead of using his real name.|	Whatever makes him happy, I guess. 
+FT:		My little brother Jake visited Shaun and I today; surprisingly he agreed with me - he thinks the VSCS is cool as heck too.|	But boy does that 14-year age gap show sometimes though... he's more interested in making weird art to display on the terminal and stuff. I let him set up an account on the machine and he named himself after some rap artist instead of using his real name.|	I don't really get the fun in that, but whatever makes him happy is fine by me. 
 
 NodeType: Text
 FQName: Monica/VSCSNonsense/Jan29
@@ -143,7 +143,7 @@ NT:
 FT:		I've been sending Jake home with the VSCS on the weekends, as long as he promises to bring it back I have to trouble with that. I don't really feel like journaling on this thing, even if I dig the ~aesthetic~ of that. This thing's more of a conversation piece, so if it makes Jake happy, that's cool with me.|	Not really sure how mom puts up with him and the rap music these days though. He won't stop writing "$$$" on everything. Dollar signs everywhere, like he's worshipping capitalism. Apparently it's a rap somg?|| How do you even pronounce "$$$"? You can't.|| Weird kid, gotta love him. 
 ----------------------------------------------------------
 NodeType: Directory
-FQName: Shaun/Mega
+FQName: Shaun/megathingy
 ReadBit: 1
 Owner: Shaun
 LockBit: 1
@@ -152,7 +152,7 @@ NT:
 FT:
 
 NodeType: MEGA
-FQName: Shaun/Mega/MEGA.EXE
+FQName: Shaun/megathingy/MEGA.EXE
 ReadBit: 1
 Owner: G0ldf$h
 LockBit: 0
