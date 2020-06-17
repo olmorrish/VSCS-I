@@ -128,7 +128,7 @@ public class FileTree {
                     for (int i = 0; i < remainingAddress.Length; i++) {
                         errorLog += remainingAddress[i] + " | ";
                     }
-                    Debug.Log(errorLog + "\".");
+                    Debug.LogError(errorLog + "\".");
                     return false;                   //otherwise return that the addition failed
                 }
             }
@@ -146,7 +146,7 @@ public class FileTree {
                     for(int i=0; i<remainingAddress.Length; i++) {
                         errorLog += remainingAddress[i] + " | ";
                     }
-                    Debug.Log(errorLog + "\".");
+                    Debug.LogError(errorLog + "\".");
 
                     return false;                   //otherwise return that the addition failed
                 }

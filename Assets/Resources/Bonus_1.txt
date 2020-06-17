@@ -23,14 +23,14 @@ Owner: Oliver
 LockBit: 0
 Password:
 NT:
-FT: The password is the decimal version of:||11111111 00001111 11110000 10110011||Convert each 8-bit segment into its 3-digit decimal equivalent.
+FT: The password is the decimal version of:||11111111 00001111 11110000 10110011||Convert each 8-bit segment into its 3-digit decimal equivalent. Separate each segment with a "-" dash. 
 
 NodeType: Directory
 FQName: Challenges/ChallengePack1/NextLevel
 ReadBit: 1
 Owner: Oliver
 LockBit: 1
-Password: 255 015 240 179
+Password: 255-015-240-179
 NT:
 FT:
 
@@ -68,7 +68,7 @@ Owner: Oliver
 LockBit: 0
 Password:
 NT:
-FT: The password is the hexadecimal version of:||11111011101110010||Convert this into its hex equivalent.
+FT: The password is the hexadecimal version of:||	0001 1111 0111 0111 0010||Convert this into its hex equivalent.
 
 NodeType: Directory
 FQName: Challenges/ChallengePack1/NextLevel/Complete

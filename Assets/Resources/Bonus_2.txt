@@ -1,8 +1,71 @@
-NodeType: Directory
+﻿NodeType: Directory
 FQName: Challenges/ChallengePack2
 ReadBit: 1
-Owner: Oliver
+Owner: Challenges/ChallengePack2
 LockBit: 0
-Password:
-NT:
+Password: NA
+NT: Session as "Challenges/ChallengePack2" has started.
 FT:
+----------------------------------------------------------------------------------------------------------------------
+NodeType: Text
+FQName: Challenges/ChallengePack2/MorseDecode
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: Na
+NT: 
+FT: 	To get the password, decode the following Morse code:||. _ = _ . = . . . = . _ _ = . = . _ .||	"_" denotes a dash.|	"." denotes a dot.|	"=" separates each letter.
+
+NodeType: Directory
+FQName: Challenges/ChallengePack2/NextLevel
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 1
+Password: ANSWER
+NT: Welcome to the "Next" of Challenge.
+FT:
+
+NodeType: Text
+FQName: Challenges/ChallengePack2/MorseTable
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: Na
+NT: 
+FT: Morse Code Reference||	A:. _	    N:_ .|	B:_ . . .	O:_ _ _|	C:_ . _ .	P:. _ _ .|	D:_ . .	    Q:_ _ . _|	E:.	        R:. _ .|	F:. . _ .	S:. . .|	G:_ _ .	    T:_|	H:. . . .	U:. . _|	I:. .	    V:. . . _|	J:. _ _ _	W:. _ _|	K:_ . _	    Y:_ . _ _|	L:. _ . .	Z:_ _ . .|	M:_ _	|| Ex: The code to represent "SOS" is:||	. . . = _ _ _ = . . .||This is the most common distress signal!
+--------------------------------------------------------------------------------------------------------------------
+NodeType: Text
+FQName: Challenges/ChallengePack2/NextLevel/RailCipher
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: Na
+NT: 
+FT: 	To get the password, decipher the rail fence ciphertext:||	UtmtQetoliaeusin
+
+NodeType: Directory
+FQName: Challenges/ChallengePack2/NextLevel/Complete
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 1
+Password: UltimateQuestion
+NT: Welcome to the "Level4" of Challenge.
+FT:
+
+NodeType: Text
+FQName: Challenges/ChallengePack2/NextLevel/HelpDoc
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: Na
+NT: 
+FT:	In this challenge you are going to solve the "rail fence cipher". The way to encrypt is to separate the word or sentence into two lines. Put the odd sequenced character into the first line, and put the even sequenced character into second line. |	For example the word "administrator" would be separated into "amnsrtr" and "diitao". Then put the second line behind the first line. The word "administrator" will transfer to "amnsrtrdiitao". ||	To decrypt this, you'll need to evenly separate the ciphertext into two lines.|	Ex: "amnsrtrdiitao" will become "amnsrtr" and "diitao". Next, write the cut the character of "amnsrtr", followed by the first character of "diitao", to get "ad". |	Then repeat this with the second character to get "admi".|	See the pattern? Now try it yourself！
+---------------------------------------------------------------------------------------------------------------
+NodeType: Text
+FQName: Challenges/ChallengePack2/NextLevel/Complete/DONE
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: Na
+NT: 
+FT: Challenge Pack 2 completed!
