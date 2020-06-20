@@ -2,13 +2,31 @@
 FQName: Challenges/ChallengePack2
 ReadBit: 1
 Owner: Challenges/ChallengePack2
-LockBit: 0
-Password: NA
+LockBit: 1
+Password: NEXT
 NT: Session as "Challenges/ChallengePack2" has started.
 FT:
-----------------------------------------------------------------------------------------------------------------------
+
 NodeType: Text
-FQName: Challenges/ChallengePack2/MorseDecode
+FQName: Challenges/ChallengePack2/Addition
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: NA
+NT: 
+FT: 	19 + 23 = __
+
+NodeType: Directory
+FQName: Challenges/ChallengePack2/Level2
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 1
+Password: 42
+NT: Welcome to the "Level2" of Challenge.
+FT:
+-------------------------------------------------------------------------------------------------------------------------------------------
+NodeType: Text
+FQName: Challenges/ChallengePack2/Level2/MorseDecode
 ReadBit: 1
 Owner: Challenges/ChallengePack2
 LockBit: 0
@@ -17,55 +35,163 @@ NT:
 FT: 	To get the password, decode the following Morse code:||. _ = _ . = . . . = . _ _ = . = . _ .||	"_" denotes a dash.|	"." denotes a dot.|	"=" separates each letter.
 
 NodeType: Directory
-FQName: Challenges/ChallengePack2/NextLevel
+FQName: Challenges/ChallengePack2/Level2/Level3
 ReadBit: 1
 Owner: Challenges/ChallengePack2
 LockBit: 1
 Password: ANSWER
-NT: Welcome to the "Next" of Challenge.
+NT: Welcome to the "Level3" of Challenge.
 FT:
 
 NodeType: Text
-FQName: Challenges/ChallengePack2/MorseTable
+FQName: Challenges/ChallengePack2/Level2/MorseTable
 ReadBit: 1
 Owner: Challenges/ChallengePack2
 LockBit: 0
 Password: Na
 NT: 
 FT: Morse Code Reference||	A:. _	    N:_ .|	B:_ . . .	O:_ _ _|	C:_ . _ .	P:. _ _ .|	D:_ . .	    Q:_ _ . _|	E:.	        R:. _ .|	F:. . _ .	S:. . .|	G:_ _ .	    T:_|	H:. . . .	U:. . _|	I:. .	    V:. . . _|	J:. _ _ _	W:. _ _|	K:_ . _	    Y:_ . _ _|	L:. _ . .	Z:_ _ . .|	M:_ _	|| Ex: The code to represent "SOS" is:||	. . . = _ _ _ = . . .||This is the most common distress signal!
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------
 NodeType: Text
-FQName: Challenges/ChallengePack2/NextLevel/RailCipher
+FQName: Challenges/ChallengePack2/Level2/Level3/ASCIIConv2
 ReadBit: 1
 Owner: Challenges/ChallengePack2
 LockBit: 0
 Password: Na
 NT: 
-FT: 	To get the password, decipher the rail fence ciphertext:||	UtmtQetoliaeusin
+FT: 	Convert the decimal numbers:|| 84 111 84 104 101|| into ASCII to characters
 
 NodeType: Directory
-FQName: Challenges/ChallengePack2/NextLevel/Complete
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 1
+Password: ToThe
+NT: Wellcome to the "Level4" of Challenge.
+FT:
+
+NodeType: Text
+FQName: Challenges/ChallengePack2/Level2/Level3/HelpDoc
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: Na
+NT: 
+FT: To convert decimal to ASCII, you'll need to find an ASCII conversion table online. For each decimal number, look up its corresponding ASCII character (this will usually be a letter of the alphabet).
+-------------------------------------------------------------------------------------------------------------------------------------------
+NodeType: Text
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4/RailCipher
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: Na
+NT: 
+FT: 	Decipher the rail fence ciphertext:||	UtmtQetoliaeusin
+
+NodeType: Directory
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4/Level5
 ReadBit: 1
 Owner: Challenges/ChallengePack2
 LockBit: 1
 Password: UltimateQuestion
-NT: Welcome to the "Level4" of Challenge.
+NT: Wellcome to the "Level5" of Challenge.
 FT:
 
 NodeType: Text
-FQName: Challenges/ChallengePack2/NextLevel/HelpDoc
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4/HelpDoc
 ReadBit: 1
 Owner: Challenges/ChallengePack2
 LockBit: 0
 Password: Na
 NT: 
-FT:	In this challenge you are going to solve the "rail fence cipher". The way to encrypt is to separate the word or sentence into two lines. Put the odd sequenced character into the first line, and put the even sequenced character into second line. |	For example the word "administrator" would be separated into "amnsrtr" and "diitao". Then put the second line behind the first line. The word "administrator" will transfer to "amnsrtrdiitao". ||	To decrypt this, you'll need to evenly separate the ciphertext into two lines.|	Ex: "amnsrtrdiitao" will become "amnsrtr" and "diitao". Next, write the cut the character of "amnsrtr", followed by the first character of "diitao", to get "ad". |	Then repeat this with the second character to get "admi".|	See the pattern? Now try it yourself！
----------------------------------------------------------------------------------------------------------------
+FT: 	In this challenge you are going to solve the "rail fence cipher". The way to encrypt is to separate the word or sentence into two lines. Put the odd sequenced character into the first line, and put the even sequenced character into second line. |	For example the word "administrator" would be separated into "amnsrtr" and "diitao". Then put the second line behind the first line. The word "administrator" will transfer to "amnsrtrdiitao". ||	To decrypt this, you'll need to evenly separate the ciphertext into two lines.|	Ex: "amnsrtrdiitao" will become "amnsrtr" and "diitao". Next, write the cut the character of "amnsrtr", followed by the first character of "diitao", to get "ad". |	Then repeat this with the second character to get "admi".|	See the pattern? Now try it yourself！
+-------------------------------------------------------------------------------------------------------------------------------------------
 NodeType: Text
-FQName: Challenges/ChallengePack2/NextLevel/Complete/DONE
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4/Level5/MultiEncrypt
 ReadBit: 1
 Owner: Challenges/ChallengePack2
 LockBit: 0
 Password: Na
 NT: 
-FT: Challenge Pack 2 completed!
+FT: 	Decrypt the ciphertext:||.-. = .-.. = .. = .. = --- = ....||	This ciphertext was obtained by applying these schemes in order:|1. Caesar cipher right shift 3. |2.Rail fence cipher.|3. Morse code.
+
+NodeType: Directory
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4/Level5/Level6
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 1
+Password: OFLIFE
+NT: Wellcome to the "Level6" of Challenge.
+FT:
+
+NodeType: Text
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4/Level5/MorseTable
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: Na
+NT: 
+FT: Morse Code Reference||	A:. _	    N:_ .|	B:_ . . .	O:_ _ _|	C:_ . _ .	P:. _ _ .|	D:_ . .	    Q:_ _ . _|	E:.	        R:. _ .|	F:. . _ .	S:. . .|	G:_ _ .	    T:_|	H:. . . .	U:. . _|	I:. .	    V:. . . _|	J:. _ _ _	W:. _ _|	K:_ . _	    Y:_ . _ _|	L:. _ . .	Z:_ _ . .|	M:_ _	|| Ex: The code to represent "SOS" is:||	. . . = _ _ _ = . . .||This is the most common distress signal!
+
+NodeType: Text
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4/Level5/RailHelp
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: 
+NT: Wellcome to the "Level6" of Challenge.
+FT: To decrypt a rail cipher, you'll need to first evenly separate the ciphertext into two lines.|	Ex: "amnsrtrdiitao" will become "amnsrtr" and "diitao". Next, write the cut the character of "amnsrtr", followed by the first character of "diitao", to get "ad". |	Then repeat this with the second character to get "admi".|	See the pattern? Now try it yourself！
+-------------------------------------------------------------------------------------------------------------------------------------------
+NodeType: Text
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4/Level5/Level6/HIDE2
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: Na
+NT: 
+FT: 	Solve HIDE2 cipher "(171, 1), (86, 2), (217, 4), (96, 8), (150, 16)"
+
+NodeType: Directory
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4/Level5/Level6/Level7
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 1
+Password: universe
+NT: Wellcome to the "Level7" of Challenge.
+FT:
+
+NodeType: Text
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4/Level5/Level6/HelpDoc
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: Na
+NT: 
+FT: 	Good, seems like you're still trying!|	You need to solve a "HIDE2" puzzle in this level. It was invented by one of my friends. HIDE2 is a way to encrypt by using decimal to binary conversion. Here is an example to decrypt:|	(1, 5), (4, 3), (8, 12). Here are 3 set of 2-tuples. First, you need to seperate and reorganize them into (1, 4, 8), (5, 3, 12). For ease of understanding, we call (1, 4, 8) the "standard", (5, 3, 12) the “result”. Transfer the result tuple into binary numbers: 5(101), 3(11), 12(1100). Then, you need to line up then vertically(add 0 infront if necessary). |	0 0 1|	1 0 1|	0 1 0|	1 1 0|	Change all the 1s in first column into the first element of the standard. Change all the 1s in second column into the second element of the standard, and keep going. You would get:|	0 0 8|	1 0 8|	0 4 0|	1 4 0|	Then add them up horizontally and you would get 4 numbers: |	8|	9|	4|	5|	With the order of characters in the alphabet, we can get the the ciphertext h, i, d, e.
+-------------------------------------------------------------------------------------------------------------------------------------------
+NodeType: Text
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4/Level5/Level6/Level7/FinalChallenge
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: Na
+NT: 
+FT: 	You are very close to the end now! Try to decrypt this ciphertext:|| rirelguvat|| HINT: Dimond K
+
+NodeType: Directory
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4/Level5/Level6/Level7/Level8
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 1
+Password: everything
+NT: Congratulations, You have finished all challenge questions. 
+FT:
+-------------------------------------------------------------------------------------------------------------------------------------------
+NodeType: Text
+FQName: Challenges/ChallengePack2/Level2/Level3/Level4/Level5/Level6/Level7/Level8/Reward
+ReadBit: 1
+Owner: Challenges/ChallengePack2
+LockBit: 0
+Password: Na
+NT: 
+FT: 	                           .'\|	                          //  ;|	                         /'    \|	        .----..._    _../ \    ]|	         \'---._ `.-'      `  .'|	          `.    '              `.|	            :            _,.    '.|	            l     ,_    (() '    )|	            ;   .'(().  '      _/__..-|	             \ _ '           _.-'--._|	            ,'.'...____.::-'  \     `'|	           / l   /         .---.|	     .-.  '  '  / ,---.   (     )|	    / /       ,' (     )---`-`-`-.._|	   : '       /  '-`-`-`..........--'\|	   ' :      /  /                     '.|	   :  \    [  .'         o             \|	    \  '  .' /          o       .       '|	     \  `.[  :      ,    : _o--'.\      ]|	      `. /  '       ))    (   )  \>     ]|	        ;   [      ((      \ /    \___  ]|	        ;   [      _))      `'.-'. ,-'` '|	        l    `.   ((`            l/    /|	        \     ).  .))            '    .|	     ----`-'-'  `''.::.________:::mx'' ---                  

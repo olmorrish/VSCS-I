@@ -68,7 +68,7 @@ Owner: Shaun
 LockBit: 0
 Password:
 NT:
-FT: Jan 13, 1997||	Aaaaand my poorly encrypted password is still in the "Alice" folder! I give up -  I'm giving this thing to Monica. She definitely doesn't care about the security stuff at all, though I'm mostly just mad because of the name. ||	Seriously though...||VERY|SECURE|COMPUTER|SYSTEM|| No wonder there wasn't a Mark II, haha. 
+FT: Jan 13, 1997||	Aaaaand my poorly encrypted password is still in the "Alice" folder! I give up -  I'm giving this thing to Monica. She definitely doesn't care about the security stuff at all, though I'm mostly just mad because of the name. ||	Seriously though...||VERY|SECURE|COMPUTER|SYSTEM|| Hilarious. 
 
 NodeType: Text
 FQName: Shaun/Journal/Fragment2
