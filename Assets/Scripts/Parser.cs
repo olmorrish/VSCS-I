@@ -179,11 +179,6 @@ public class Parser : MonoBehaviour
             /////////////////////////
             // EASTER EGG COMMANDS //
             /////////////////////////
-            case "JOJO":
-                navTextPrinter.FeedLine("> JJBA challenge pack added to HOME directory.");
-                navTextPrinter.FeedLine("> It's a good show, okay?");
-                fileSystem.AddFileContentsToTree("JoJo");
-                break;
             case "META":
                 navTextPrinter.FeedLine("> M E T A");
                 navTextPrinter.FeedLine("> E");

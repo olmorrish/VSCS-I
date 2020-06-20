@@ -108,7 +108,7 @@ public class FileSystem : MonoBehaviour
                         }
                         else {
                             navTextPrinter.FeedLine("> Incorrect password.");
-                            Debug.Log("Player entered \"" + optionalPassword + "\" but the correct password is \"" + child.password + "\".");
+                            //Debug.Log("Player entered \"" + optionalPassword + "\" but the correct password is \"" + child.password + "\".");
                         }
                     }
                     else if (child.locked){
