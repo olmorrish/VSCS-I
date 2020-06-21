@@ -41,6 +41,7 @@ public class Parser : MonoBehaviour
 
         //cinematics
         endingMusic = endingMusicObject.GetComponent<AudioSource>();
+        endingMusic.time = 5f;
 
     }
 
@@ -93,15 +94,6 @@ public class Parser : MonoBehaviour
             case "HELP":
                 PrintHelpMsg();
                 break;
-            case "DEMO":
-                navTextPrinter.ShowNavIntro();
-                fileTextPrinter.ShowFileIntro();
-                break;
-
-            /////////////////////////
-            // NAVIGATION COMMANDS //
-            /////////////////////////
-
             case "LIST":
                 string[] list = fileSystem.GetChildList();
                 if(list.Length == 0) {
@@ -222,7 +214,7 @@ public class Parser : MonoBehaviour
                 navTextPrinter.FeedLine("> Yeah I'm sure I will be. I'm so scared.");
                 break;
             case "ZOOP":
-                navTextPrinter.FeedLine("> *fingerguns*");
+                navTextPrinter.FeedLine("> *fingerguns* B)");
                 break;
             case "L055":
                 navTextPrinter.FeedLine("\n>         | t    ");

@@ -59,7 +59,7 @@ Owner: Shaun
 LockBit: 0
 Password:
 NT:
-FT: Jan 12, 1997||	I've changed the way the machine stores passwords to check if they're correct. Now, it'll store them in a text file in my directory, and they should be barely human-readable.|| It's called "sexadecimal" I think, just numbers an ABCDEF. The computer should store "hashes" of our passwords - it can shash them when we enter them to check if they're right, BUT it can't reverse the hashes to get the passwords back. Pretty clever||	I don't think anyone could find the password unless there was some database on the Web to search. Not like anything like that would be possible - how would anybody find it? Not like you can just plug in a "hash" and get the password from a database.
+FT: Jan 12, 1997||	I've changed the way the machine stores passwords to check if they're correct. Now, it'll store them in a text file in my directory, and they should be barely human-readable.|| It's called "sexadecimal" I think, just numbers and ABCDEF. The computer should store "hashes" of our passwords - it can hash them when we enter them to check if they're right, BUT it's impossible to reverse the hashes to get the passwords back. Pretty clever.||	I don't think anyone could find the password unless there was some database on the Web to search. Not like anything like that would be possible - how would anybody find it? Not like you can just type in a "hash" and get the password from an all-knowing database.
 
 NodeType: Text
 FQName: Shaun/Journal/Jan13
@@ -68,7 +68,7 @@ Owner: Shaun
 LockBit: 0
 Password:
 NT:
-FT: Jan 13, 1997||	Aaaaand my poorly encrypted password is still in the "Alice" folder! I give up -  I'm giving this thing to Monica. She definitely doesn't care about the security stuff at all, though I'm mostly just mad because of the name. ||	Seriously though...||VERY|SECURE|COMPUTER|SYSTEM|| Hilarious. 
+FT: Jan 13, 1997||	Aaaaand my poorly encrypted password is still in the "Alice" folder! I give up -  I'm giving this thing to Monica. She definitely doesn't care about the security stuff at all, though I'm mostly just mad because of the name. ||Seriously though...||VERY|SECURE|COMPUTER|SYSTEM||Hilarious. 
 
 NodeType: Text
 FQName: Shaun/Journal/Fragment2
@@ -140,7 +140,7 @@ Owner: Monica
 LockBit: 0
 Password:
 NT:
-FT:		I've been sending Jake home with the VSCS on the weekends, as long as he promises to bring it back I have to trouble with that. I don't really feel like journaling on this thing, even if I dig the ~aesthetic~ of that. This thing's more of a conversation piece, so if it makes Jake happy, that's cool with me.|	Not really sure how mom puts up with him and the rap music these days though. He won't stop writing "$$$" on everything. Dollar signs everywhere, like he's worshipping capitalism. Apparently it's a rap somg?|| How do you even pronounce "$$$"? You can't.|| Weird kid, gotta love him. 
+FT:		I've been sending Jake home with the VSCS on the weekends. As long as he promises to bring it back I have no trouble with that. I don't really feel like journaling on this thing, even if I dig the ~*=retro aesthetic=*~ of that. This thing's more of a conversation piece, so if it makes Jake happy, that's cool with me.|	Not really sure how mom puts up with him and the rap music these days though. He won't stop writing "$$$" on everything. Dollar signs everywhere, like he's worshipping capitalism. Apparently it's a rap somg?|| How do you even pronounce "$$$"? You can't.|| Weird kid, gotta love him. 
 ----------------------------------------------------------
 NodeType: Directory
 FQName: Shaun/megathingy

@@ -3,7 +3,33 @@ FQName: Challenges/ChallengePack3
 ReadBit: 1
 Owner: Oliver
 LockBit: 0
-Password:
-NT:
+Password: na
+NT: Session as "Challenges/ChallengePack2" has started.
 FT:
 
+NodeType: Directory
+FQName: Challenges/ChallengePack3/Credits
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password: NA
+NT: 
+FT: 
+
+NodeType: Text
+FQName: Challenges/ChallengePack3/Credits/Instructions
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password: NA
+NT: 
+FT:		So, you want to know the people who created this game? You must decrypt them! We weren't going to go easy on you!|	To decypher the names, you must decrypt a Playfair cipher. || To encrypt a message with with this scheme, separate it into pairs and use the letter 'Q' to separate doubled letters, and also to finish up the last pair if you're short. Then, use the given table and follow three rules for each pair of letters: |	1. If both letters are on the same row, move each letter right by one (wrap around if out of space).|	2. If both letters are in the same column, move each letter down by one (wrap around if out of space).|	3. Otherwise, move each letter to the column of the other letter while staying in the same row.||To decrypt, you'll have to find a way to reverse these steps. 
+
+NodeType: Text
+FQName: Challenges/ChallengePack3/Credits/ActualCredits
+ReadBit: 1
+Owner: Oliver
+LockBit: 0
+Password: NA
+NT: 
+FT: Decrypt our names:|	IFZE JSOU|	MPASCUD JRAMDDP|	QHCZDE HUDOECHO|	ETUFJB FOSEIX|| ... which were encrypted using the table below. Have fun, and thank you for playing!||+-----------------------------+|[  C  -  R  -  E  -  D  -  I  ]|+-----+-----+-----+-----+-----+|[  T  -  S  -  A  -  F  -  B  ]|+-----+-----+-----+-----+-----+|[  G  -  H  -  J  -  L  -  M  ]|+-----+-----+-----+-----+-----+|[  N  -  O  -  P  -  Q  -  U  ]|+-----+-----+-----+-----+-----+|[  V  -  W  -  X  -  Y  -  Z  ]|+-----------------------------+|| (Ex: The message "COOL GAME" would be turned into "CO QO LG AM EQ" first, and then would be encrypted with this table as "RNUPMHFJDP".)

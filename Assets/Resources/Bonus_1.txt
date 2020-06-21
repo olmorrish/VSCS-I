@@ -113,7 +113,16 @@ Owner: Oliver
 LockBit: 0
 Password: 
 NT:
-FT: Convert the decimal numbers: ||78 69 88 84|| into ASCII characters. ||This password will allow you to unlock Challenge Pack 2.
+FT: Convert the decimal numbers: ||78 69 88 84|| into ASCII characters.
+
+NodeType: Directory
+FQName: Challenges/ChallengePack1/Level2/Level3/Level4
+ReadBit: 1
+Owner: Oliver
+LockBit: 1
+Password: NEXT
+NT:
+FT: 
 
 NodeType: Text
 FQName: Challenges/ChallengePack1/Level2/Level3/HelpDoc
@@ -123,3 +132,12 @@ LockBit: 0
 Password: 
 NT:
 FT: To convert decimal to ASCII, you'll need to find an ASCII conversion table online. For each decimal number, look up its corresponding ASCII character (this will usually be a letter of the alphabet).
+------------------------------------
+NodeType: Text
+FQName: Challenges/ChallengePack1/Level2/Level3/Level4/Complete
+ReadBit: 1
+Owner: Oliver
+LockBit: 1
+Password: NEXT
+NT:
+FT: You've completed Challenge Pack 1!

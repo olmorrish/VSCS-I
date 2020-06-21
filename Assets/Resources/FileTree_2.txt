@@ -50,7 +50,7 @@ Owner: Alice
 LockBit: 0
 Password: NA
 NT:
-FT: 	Hope you're having fun reading those diary entries - they get surprisingly entertaining, in my opinion. Employees are only fun when they're disgruntled.|	So you've purchased this old computer. It's a relic now for sure - it was when I bought it as well. I've had a bit of fun with it, though. The VSCS-I is HILARIOUSLY flawed - almost anyone schmuck can crack it. If you're smart, you can piece together the password to my account, where I've hidden some valuable information. Trust me, it's worth it.|	I've scattered four pieces of my password across all the old users as a puzzle for the next owner of this fine machine. All you have to do is be resourceful: concatenate all the pieces together, and you can get access to my account and everything it holds.|	Have fun.||	- Rick||PS: The first fragment is: HAND
+FT: 	Hope you're having fun reading those diary entries - they get surprisingly entertaining, in my opinion. Employees are only fun when they're disgruntled.|	So you've purchased this old computer. It's a relic now for sure - it was when I bought it as well. I've had a bit of fun with it, though. The VSCS-I is HILARIOUSLY flawed - almost any schmuck can crack it. If you're smart, you can piece together the password to my account, where I've hidden some valuable information. Trust me, it's worth it.|	I've scattered four pieces of my password across all the old users as a puzzle for the next owner of this fine machine. All you have to do is be resourceful: concatenate all the pieces together, and you can get access to my account and everything it holds.|	Have fun.||	- Rick||PS: The first fragment is: HAND
 
 NodeType: Text
 FQName: Alice/MyDiary/Jul2
@@ -68,7 +68,7 @@ Owner: Alice
 LockBit: 0
 Password: NA
 NT:
-FT: Alice's Diary - July whocares-th, 19-sixty-blegh||	So like, if the password was "HeLL0", right? Then it'd be stored in the system as "KhOOc" -  you just shift each letter down three times. So "y" becomes "B". The zero at the end of "HeLL0" is kinda weird since it turns into a "c" - the list loops if you hit the end.|	Just remember that it's all the lowercase letters in order, then the uppercase letters, then the numbers 1-9 and then 0.|	"abc...xyzABC...XYZ1234567890"||	So congrats, now you're an amateur cryptographer, lucky you. Though it's not like anyone WITH A BRAIN has actually encrypted anything like this for the past thousand years and expected it to stay secret. I told him it was stupid, but did he listen?|	NoooooOOOOooooo
+FT: Alice's Diary - July whocares-th, 19-sixty-blegh||	So like, if the password was "HeLL0", right? Then it'd be stored in the system as "KhOOc" -  you just shift each letter down three times. So "y" becomes "B". The zero at the end of "HeLL0" is kinda weird since it turns into a "c" - the list loops if you hit the end.|	Just remember that it's all the lowercase letters in order, then the uppercase letters, then the numbers 1-9 and then 0.||	abc...xyzABC...XYZ1234567890||	So congrats, now you're an amateur cryptographer, lucky you. Though it's not like anyone WITH A BRAIN has actually encrypted anything like this for the past thousand years and expected it to stay secret. I told him it was stupid, but did he listen?|	NoooooOOOOooooo
 
 NodeType: Text
 FQName: Alice/MyDiary/Jul7
@@ -86,4 +86,4 @@ Owner: Alice
 LockBit: 0
 Password: NA
 NT:
-FT: Encrypted Password Reference||USER Shaun -> PASSWORD GrjvUjua||USER Monica -> <DATA CORRUPT:@#ERR%>||User G0ldf$h -> PASSWORD <INVALID CHAR:^;g(;ERR*4>
+FT: Encrypted Password Reference||USER: Alice -> PASSWORD: DGPLQ||USER: Shaun -> PASSWORD: GrjvUjua||USER: Monica -> PASSWORD: <DATA CORRUPT:@#ERR%>||User: G0ldf$h -> PASSWORD: <DATA CORRUPT:^;g(;ERR*4>

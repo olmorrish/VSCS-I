@@ -2,8 +2,8 @@
 FQName: Challenges/ChallengePack2
 ReadBit: 1
 Owner: Challenges/ChallengePack2
-LockBit: 1
-Password: NEXT
+LockBit: 0
+Password: na
 NT: Session as "Challenges/ChallengePack2" has started.
 FT:
 

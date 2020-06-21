@@ -23,7 +23,7 @@ Owner: Rick
 LockBit: 0
 Password: 
 NT:
-FT: 	Good, looks like you solved the puzzle. The secret documents are in the next file. Be sure to read them closely, they're important government secrets.|	Take them to the news, if you can. Spread the word. Tell everyone.
+FT: 	Good, looks like you solved the puzzle. The documents are in the next file. Be sure to read them closely, they're important government secrets.|	Take them to the news, if you can. Spread the word. Tell everyone.
 
 NodeType: Text
 FQName: Rick/SecretFiles/TheEnd2
@@ -41,7 +41,7 @@ Owner: Rick
 LockBit: 0
 Password: 
 NT:
-FT: 	Thank you for playing!||	Apologies for the Rick-Roll, but development time was tight and there wasn't enough time to include a full story, so focus went in to creating a unique experience instead. VSCS-I will likely be in development for a while after this build, so check back every so often to see if a full version (with an actual story) has been released. I plan to keep working on it for a little while.||	- Oliver||PS: Run CHALLENGES.EXE to unlock a few bonus challenge puzzles from the home directory.
+FT: 	Thank you for playing!||	Although the story is done, you can now run CHALLENGES.EXE to unlock a few bonus challenge puzzle packs that will appear in the home directory.
 
 NodeType: END
 FQName: Rick/SecretFiles/CHALLENGES.EXE
