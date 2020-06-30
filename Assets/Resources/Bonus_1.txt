@@ -62,7 +62,7 @@ NT:
 FT: Because there is a 1 in every position in the first character, we know that there is one of every number from all of those positions. So, starting from the right (as we would with decimal , where we start from the ones), we can say that there is a 1, a 2, a 4, an 8, a 16, a 32, a 64, and a 128. By adding these all up, we get the number 255, which is the first number in the code.||Now it's your turn... find the other three numbers and input them into the system to continue, and make sure there are three numbers per slot (put a zero in front to fill it if you need to).
 --------------------------------------------------------
 NodeType: Text
-FQName: Challenges/ChallengePack1//Level2/HexConv
+FQName: Challenges/ChallengePack1/Level2/HexConv
 ReadBit: 1
 Owner: Oliver
 LockBit: 0
