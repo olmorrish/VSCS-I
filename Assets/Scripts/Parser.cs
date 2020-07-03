@@ -22,10 +22,6 @@ public class Parser : MonoBehaviour
 
     private string previousCommand;
 
-    //cinematics
-    public GameObject endingMusicObject;
-    private AudioSource endingMusic;
-
     // Start is called before the first frame update
     void Start(){
 
@@ -38,10 +34,6 @@ public class Parser : MonoBehaviour
         confirmBeep.time = 0.1f;
 
         previousCommand = null;
-
-        //cinematics
-        endingMusic = endingMusicObject.GetComponent<AudioSource>();
-        endingMusic.time = 5f;
 
     }
 
@@ -75,15 +67,6 @@ public class Parser : MonoBehaviour
     }
 
     public void Parse(string rawInput) {
-        
-        
-        //SPECIAL CINEMATIC TRIGGERS
-        if ((rawInput.ToUpper().Contains("OPEN THEEND2")
-            || rawInput.ToUpper().Contains("GOTO THEEND2") 
-            || rawInput.ToUpper().Contains("CD THEEND2")) && fileSystem.playerHasMEGAPermissions){
-                
-                endingMusic.Play();
-        }
 
         string[] inputs = rawInput.Split(' ');
         string command = inputs[0].ToUpper();
