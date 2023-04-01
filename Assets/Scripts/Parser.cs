@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Parser : MonoBehaviour
-{
+public class Parser : MonoBehaviour  {
 
     public GameObject navTextObject;
     public GameObject fileTextObject;
@@ -24,7 +23,6 @@ public class Parser : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
-
         navTextPrinter = navTextObject.GetComponent<TerminalPrinter>();
         fileTextPrinter = fileTextObject.GetComponent<TerminalPrinter>();
         inputField = gameObject.GetComponent<InputField>();
@@ -34,12 +32,10 @@ public class Parser : MonoBehaviour
         confirmBeep.time = 0.1f;
 
         previousCommand = null;
-
     }
 
     // Update is called once per frame
     void Update(){
-
         //ensure the field is always the focus
         inputField.Select();
         inputField.ActivateInputField();
@@ -70,9 +66,7 @@ public class Parser : MonoBehaviour
 
         string[] inputs = rawInput.Split(' ');
         string command = inputs[0].ToUpper();
-
         
-
         switch (command) {
             case "HELP":
                 PrintHelpMsg();
@@ -149,6 +143,14 @@ public class Parser : MonoBehaviour
             case "LOST":
                 string location = fileSystem.GetCurrentFQN();
                 navTextPrinter.FeedLine("> Your current location in the file system is: " + location.ToUpper() + ".");
+                break;
+            case "QUIT":
+                if (Application.platform == RuntimePlatform.WebGLPlayer) {
+                    navTextPrinter.FeedLine("> System shutdown failed.");
+                }
+                else {
+                    Application.Quit();
+                }
                 break;
 
             /////////////////////////
@@ -229,5 +231,6 @@ public class Parser : MonoBehaviour
         navTextPrinter.FeedLine("         |   using password \"Y\".");
         navTextPrinter.FeedLine("BACK     | Navigates one directory up.");
         navTextPrinter.FeedLine("LOST     | Displays your file location.");
+        navTextPrinter.FeedLine("QUIT     | Power down the VSCS-I system.");
     }
 }
